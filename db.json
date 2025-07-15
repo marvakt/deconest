@@ -200,6 +200,13 @@
       "title": "Woven Basket",
       "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
       "price": 799
+    },
+    {
+      "id": "524e",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999
     }
   ],
   "cart": [
@@ -218,6 +225,22 @@
       "title": "LED Fairy Lights",
       "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
       "price": 799,
+      "quantity": 1
+    },
+    {
+      "id": "cfc0",
+      "productId": "8",
+      "title": "Framed Quote Print",
+      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
+      "price": 799,
+      "quantity": 1
+    },
+    {
+      "id": "052c",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
       "quantity": 1
     }
   ],
