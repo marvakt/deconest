@@ -1,0 +1,170 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@deconest.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "email": "user@example.com",
+      "password": "user123",
+      "role": "user"
+    },
+    {
+      "id": "9170",
+      "fullName": "deconest",
+      "username": "deco",
+      "email": "deco@gmail.com",
+      "password": "deconest",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Boho Wall Hanging",
+      "price": 799,
+      "category": "Wall Decor",
+      "room": "Living Room",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2025-07-14T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Pastel Vase Set",
+      "price": 999,
+      "category": "Vases",
+      "room": "Bedroom",
+      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2025-07-13T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Minimalist Lamp",
+      "price": 1199,
+      "category": "Lamps",
+      "room": "Bedroom",
+      "image": "https://images.unsplash.com/photo-1560185127-6ed189bf1365?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2025-07-13T12:00:00Z"
+    }
+  ],
+  "wishlist": [
+    {
+      "id": "2",
+      "title": "Pastel Vase Set",
+      "price": 999,
+      "category": "Vases",
+      "room": "Bedroom",
+      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2025-07-13T11:00:00Z",
+      "wid": 1752495063228,
+      "userId": "9170"
+    },
+    {
+      "id": "1",
+      "title": "Boho Wall Hanging",
+      "price": 799,
+      "category": "Wall Decor",
+      "room": "Living Room",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2025-07-14T10:00:00Z",
+      "productId": "1",
+      "wid": 1752506878512
+    }
+  ],
+  "cart": [
+    {
+      "id": "c1",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "price": 999,
+      "quantity": 1,
+      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+      "userId": "9170"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "user": "john@example.com",
+      "items": [
+        {
+          "id": 101,
+          "title": "Vintage Mirror",
+          "price": 1500,
+          "quantity": 1,
+          "image": "https://..."
+        }
+      ],
+      "total": 1500,
+      "address": "123 Beach Lane, Goa",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T17:25:43.011Z"
+    },
+    {
+      "id": "ca8a",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "1",
+          "title": "Boho Wall Hanging",
+          "price": 799,
+          "category": "Wall Decor",
+          "room": "Living Room",
+          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+          "createdAt": "2025-07-14T10:00:00Z",
+          "productId": "1",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "title": "Pastel Vase Set",
+          "price": 999,
+          "category": "Vases",
+          "room": "Bedroom",
+          "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+          "createdAt": "2025-07-13T11:00:00Z",
+          "productId": "2",
+          "quantity": 1
+        }
+      ],
+      "address": "hjkj",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T00:55:21.977Z"
+    },
+    {
+      "id": "9547",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "1",
+          "title": "Boho Wall Hanging",
+          "price": 799,
+          "category": "Wall Decor",
+          "room": "Living Room",
+          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+          "createdAt": "2025-07-14T10:00:00Z",
+          "productId": "1",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "title": "Pastel Vase Set",
+          "price": 999,
+          "category": "Vases",
+          "room": "Bedroom",
+          "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+          "createdAt": "2025-07-13T11:00:00Z",
+          "productId": "2",
+          "quantity": 2
+        }
+      ],
+      "total": 2797,
+      "address": "fgg",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T01:04:48.232Z"
+    }
+  ]
+}
