@@ -1,3 +1,6 @@
+
+
+
 // import React, { createContext, useContext, useEffect, useState } from "react";
 // import axios from "axios";
 
@@ -84,18 +87,21 @@
 //   // ✅ TOTAL CALCULATION
 //   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+//   // ✅ CART COUNT
+//   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
 //   return (
 //     <CartContext.Provider
-//       value={{ cart, addToCart, updateQty, removeFromCart, clearCart, total }}
+//       value={{ cart, addToCart, updateQty, removeFromCart, clearCart, total, cartCount }}
 //     >
 //       {children}
 //     </CartContext.Provider>
 //   );
 // };
 
-
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
@@ -104,7 +110,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  // Fetch cart from server for logged in user
+  // Fetch cart data for logged-in user
   useEffect(() => {
     if (user) {
       axios
@@ -114,14 +120,18 @@ export const CartProvider = ({ children }) => {
     }
   }, [user]);
 
-  // ✅ ADD TO CART
+  // Add product to cart
   const addToCart = async (product, quantity = 1) => {
-    if (!user) return alert("Please login to add items to cart");
+    if (!user) {
+      toast.warn("Please login to add items to cart", { autoClose: 3000 });
+      return;
+    }
 
     const exists = cart.find((item) => item.productId === product.id);
 
     if (exists) {
-      const updatedQty = exists.quantity + quantity;
+      const updatedQty = Number(exists.quantity) + Number(quantity);
+
       await axios.patch(`http://localhost:3000/cart/${exists.id}`, {
         quantity: updatedQty,
       });
@@ -131,27 +141,47 @@ export const CartProvider = ({ children }) => {
           item.id === exists.id ? { ...item, quantity: updatedQty } : item
         )
       );
+
+      toast.info("Quantity updated in cart", { autoClose: 3000 });
     } else {
       const newItem = {
         productId: product.id,
         title: product.title,
         image: product.image,
-        price: product.price,
-        quantity,
+        price: Number(product.price),      // ✅ Ensure price is a number
+        quantity: Number(quantity),        // ✅ Ensure quantity is a number
         userId: user.id,
       };
 
       const res = await axios.post("http://localhost:3000/cart", newItem);
       setCart((prev) => [...prev, res.data]);
+
+      toast.success("Added to cart!", { autoClose: 3000 });
     }
   };
 
-  // ✅ UPDATE QTY
+  // Remove item from cart
+  const removeFromCart = async (id) => {
+    await axios.delete(`http://localhost:3000/cart/${id}`);
+    setCart((prev) => prev.filter((item) => item.id !== id));
+    toast.error("Item removed from cart", { autoClose: 3000 });
+  };
+
+  // Clear cart after successful order
+  const clearCart = async () => {
+    for (let item of cart) {
+      await axios.delete(`http://localhost:3000/cart/${item.id}`);
+    }
+    setCart([]);
+    toast.info("Cart cleared after order", { autoClose: 3000 });
+  };
+
+  // Update quantity of an item
   const updateQty = async (id, delta) => {
     const item = cart.find((c) => c.id === id);
     if (!item) return;
 
-    const newQty = item.quantity + delta;
+    const newQty = Number(item.quantity) + delta;
     if (newQty < 1) return;
 
     await axios.patch(`http://localhost:3000/cart/${id}`, {
@@ -163,29 +193,30 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // ✅ REMOVE ITEM
-  const removeFromCart = async (id) => {
-    await axios.delete(`http://localhost:3000/cart/${id}`);
-    setCart((prev) => prev.filter((item) => item.id !== id));
-  };
+  // ✅ Ensure correct numeric total
+  const total = cart.reduce((acc, item) => {
+    const price = Number(item.price);
+    const qty = Number(item.quantity);
+    return acc + (isNaN(price) || isNaN(qty) ? 0 : price * qty);
+  }, 0);
 
-  // ✅ CLEAR CART after order confirmation
-  const clearCart = async () => {
-    for (let item of cart) {
-      await axios.delete(`http://localhost:3000/cart/${item.id}`);
-    }
-    setCart([]);
-  };
-
-  // ✅ TOTAL CALCULATION
-  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-  // ✅ CART COUNT
-  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  // ✅ Correct cart count
+  const cartCount = cart.reduce((sum, item) => {
+    const qty = Number(item.quantity);
+    return sum + (isNaN(qty) ? 0 : qty);
+  }, 0);
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, updateQty, removeFromCart, clearCart, total, cartCount }}
+      value={{
+        cart,
+        addToCart,
+        updateQty,
+        removeFromCart,
+        clearCart,
+        total,
+        cartCount,
+      }}
     >
       {children}
     </CartContext.Provider>

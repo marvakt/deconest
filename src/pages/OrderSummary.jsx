@@ -1,3 +1,7 @@
+
+
+
+
 import React, { useEffect, useState } from "react";
 
 const OrderSummary = () => {
@@ -12,11 +16,17 @@ const OrderSummary = () => {
     return <p className="text-center mt-10">No recent order found.</p>;
   }
 
+  const totalAmount = order.items.reduce((sum, item) => {
+    const price = Number(item.price);
+    const qty = Number(item.quantity);
+    return sum + (isNaN(price) || isNaN(qty) ? 0 : price * qty);
+  }, 0);
+
   return (
     <div className="max-w-2xl mx-auto p-6 mt-8 bg-white shadow-lg rounded-xl">
       <h2 className="text-2xl font-bold mb-4 text-center">Order Summary</h2>
       <p><strong>Address:</strong> {order.address}</p>
-      <p><strong>Total:</strong> ₹{order.total}</p>
+      <p><strong>Total:</strong> ₹{totalAmount.toFixed(2)}</p>
       <p><strong>Payment:</strong> {order.paymentMethod || 'N/A'}</p>
       <p><strong>Date:</strong> {new Date(order.date).toLocaleString()}</p>
 

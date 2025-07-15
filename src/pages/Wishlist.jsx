@@ -1,53 +1,24 @@
-// // pages/Wishlist.jsx
-// import React from "react";
-// import { useWishlist } from "../contexts/WishlistContext";
-
-// const Wishlist = () => {
-//   const { wishlist, removeFromWishlist } = useWishlist();
-
-//   if (!wishlist) return <div>Loading...</div>;
-
-//   return (
-//     <div className="p-6">
-//       <h2 className="text-3xl font-bold mb-6">❤️ Your Wishlist</h2>
-//       {wishlist.length === 0 ? (
-//         <p>Your wishlist is empty.</p>
-//       ) : (
-//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-//           {wishlist.map((item) => (
-//             <div key={item.wid} className="border p-4 rounded shadow">
-//               <img src={item.image} alt={item.title} className="w-full h-48 object-cover mb-2" />
-//               <h3 className="text-lg font-semibold">{item.title}</h3>
-//               <p className="text-gray-600">₹{item.price}</p>
-//               <button
-//                 onClick={() => removeFromWishlist(item.wid)}
-//                 className="mt-2 text-red-500 hover:underline text-sm"
-//               >
-//                 Remove
-//               </button>
-//             </div>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Wishlist;
 
 
 import React from "react";
 import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
+import { toast } from "react-toastify"; // ✅ Import toast
 
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
 
-  const handleAddToCart = (item) => {
-    addToCart(item);
-    removeFromWishlist(item.wid); // wid is custom ID in wishlist
+  const handleAddToCart = async (item) => {
+    await addToCart(item); // Handles internal toast already
+    await removeFromWishlist(item.id);
+    toast.success("Moved to cart!"); // ✅ Show toast message
+  };
+
+  const handleRemove = (id) => {
+    removeFromWishlist(id);
+    toast.info("Removed from wishlist"); // ✅ Show toast message
   };
 
   return (
@@ -63,7 +34,7 @@ const Wishlist = () => {
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {wishlist.map((item) => (
               <div
-                key={item.wid}
+                key={item.id}
                 className="border rounded-xl p-4 shadow-md flex flex-col items-center text-center"
               >
                 <img
@@ -82,7 +53,7 @@ const Wishlist = () => {
                     Add to Cart
                   </button>
                   <button
-                    onClick={() => removeFromWishlist(item.wid)}
+                    onClick={() => handleRemove(item.id)}
                     className="text-red-500 hover:underline text-sm"
                   >
                     Remove

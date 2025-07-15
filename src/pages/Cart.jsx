@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import Navbar from "../components/Navbar"; // ✅ Import Navbar
+import Navbar from "../components/Navbar";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -9,10 +9,11 @@ const Cart = () => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const calculatedTotal = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
+    const calculatedTotal = cart.reduce((sum, item) => {
+      const price = Number(item.price);
+      const qty = Number(item.quantity);
+      return sum + (isNaN(price) || isNaN(qty) ? 0 : price * qty);
+    }, 0);
     setTotal(calculatedTotal);
   }, [cart]);
 
@@ -22,7 +23,7 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      <Navbar /> {/* ✅ Added Navbar here */}
+      <Navbar />
 
       <div className="px-6 py-10">
         <h2 className="text-3xl font-bold text-center mb-8">🛒 Your Cart</h2>
@@ -46,13 +47,16 @@ const Cart = () => {
                     <div className="flex justify-between items-center mb-2">
                       <h3 className="text-lg font-semibold">{item.title}</h3>
                       <button
+                        type="button"
                         onClick={() => removeFromCart(item.id)}
                         className="text-sm text-gray-400 hover:text-red-600"
                       >
                         ✕ Remove
                       </button>
                     </div>
-                    <p className="text-sm text-gray-500 mb-3">₹{item.price}</p>
+                    <p className="text-sm text-gray-500 mb-3">
+                      ₹{Number(item.price).toLocaleString("en-IN")}
+                    </p>
 
                     <div className="flex items-center gap-3">
                       <span className="text-sm">Quantity:</span>
@@ -78,7 +82,9 @@ const Cart = () => {
             </div>
 
             <div className="max-w-5xl mx-auto mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-              <h4 className="text-xl font-semibold">Total: ₹{total.toFixed(2)}</h4>
+              <h4 className="text-xl font-semibold">
+                Total: ₹{total.toLocaleString("en-IN", { minimumFractionDigits: 2 })}
+              </h4>
               <button
                 onClick={handleCheckout}
                 className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"

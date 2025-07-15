@@ -19,16 +19,24 @@
       "email": "deco@gmail.com",
       "password": "deconest",
       "role": "user"
+    },
+    {
+      "id": "6c1f",
+      "fullName": "deconest",
+      "username": "deco",
+      "email": "123@gmail.com",
+      "password": "deconest",
+      "role": "user"
     }
   ],
   "products": [
     {
       "id": "1",
-      "title": "Boho Wall Hanging",
+      "title": "Woven Basket",
       "price": 799,
       "category": "Wall Decor",
       "room": "Living Room",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
       "createdAt": "2025-07-14T10:00:00Z"
     },
     {
@@ -37,43 +45,74 @@
       "price": 999,
       "category": "Vases",
       "room": "Bedroom",
-      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "createdAt": "2025-07-13T11:00:00Z"
     },
     {
       "id": "3",
-      "title": "Minimalist Lamp",
+      "title": "Linen Bed Throw",
       "price": 1199,
       "category": "Lamps",
       "room": "Bedroom",
-      "image": "https://images.unsplash.com/photo-1560185127-6ed189bf1365?auto=format&fit=crop&w=600&q=80",
+      "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
       "createdAt": "2025-07-13T12:00:00Z"
-    }
-  ],
-  "wishlist": [
-    {
-      "id": "2",
-      "title": "Pastel Vase Set",
-      "price": 999,
-      "category": "Vases",
-      "room": "Bedroom",
-      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
-      "createdAt": "2025-07-13T11:00:00Z",
-      "wid": 1752495063228,
-      "userId": "9170"
     },
     {
-      "id": "1",
-      "title": "Boho Wall Hanging",
+      "id": "4",
+      "title": "Bed Canopy Net",
+      "price": 1199,
+      "category": "Lamps",
+      "room": "Bedroom",
+      "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+      "createdAt": "2025-07-13T12:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Wall-mounted Shelf",
+      "price": 1199,
+      "category": "Lamps",
+      "room": "Bedroom",
+      "image": "https://i.pinimg.com/736x/46/ac/e3/46ace3c0d1abadcd363b5e77032bc63b.jpg",
+      "createdAt": "2025-07-13T12:00:00Z"
+    },
+    {
+      "id": "6",
+      "title": "LED Fairy Lights",
       "price": 799,
       "category": "Wall Decor",
       "room": "Living Room",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-      "createdAt": "2025-07-14T10:00:00Z",
-      "productId": "1",
-      "wid": 1752506878512
+      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+      "createdAt": "2025-07-14T10:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "Decorative Tray",
+      "price": 799,
+      "category": "Wall Decor",
+      "room": "Living Room",
+      "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
+      "createdAt": "2025-07-14T10:00:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Framed Quote Print",
+      "price": 799,
+      "category": "Wall Decor",
+      "room": "Living Room",
+      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
+      "createdAt": "2025-07-14T10:00:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Wooden Serving Board",
+      "price": 799,
+      "category": "Wall Decor",
+      "room": "Living Room",
+      "image": "https://i.pinimg.com/1200x/0f/18/f9/0f18f90ac723ba9059a275a18c9a7dd9.jpg",
+      "createdAt": "2025-07-14T10:00:00Z"
     }
   ],
+  "wishlist": [],
   "cart": [
     {
       "id": "c1",
@@ -87,84 +126,148 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "user": "john@example.com",
-      "items": [
-        {
-          "id": 101,
-          "title": "Vintage Mirror",
-          "price": 1500,
-          "quantity": 1,
-          "image": "https://..."
-        }
-      ],
-      "total": 1500,
-      "address": "123 Beach Lane, Goa",
-      "paymentMethod": "cod",
-      "date": "2025-07-15T17:25:43.011Z"
-    },
-    {
-      "id": "ca8a",
+      "id": "7c37",
       "user": "deco@gmail.com",
       "items": [
         {
-          "id": "1",
-          "title": "Boho Wall Hanging",
-          "price": 799,
-          "category": "Wall Decor",
-          "room": "Living Room",
-          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-          "createdAt": "2025-07-14T10:00:00Z",
-          "productId": "1",
-          "quantity": 1
+          "id": "7f46",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 4
         },
         {
-          "id": "2",
-          "title": "Pastel Vase Set",
-          "price": 999,
-          "category": "Vases",
-          "room": "Bedroom",
-          "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
-          "createdAt": "2025-07-13T11:00:00Z",
+          "id": "2f03",
           "productId": "2",
-          "quantity": 1
-        }
-      ],
-      "address": "hjkj",
-      "paymentMethod": "cod",
-      "date": "2025-07-15T00:55:21.977Z"
-    },
-    {
-      "id": "9547",
-      "user": "deco@gmail.com",
-      "items": [
-        {
-          "id": "1",
-          "title": "Boho Wall Hanging",
-          "price": 799,
-          "category": "Wall Decor",
-          "room": "Living Room",
-          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-          "createdAt": "2025-07-14T10:00:00Z",
-          "productId": "1",
-          "quantity": 1
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 8
         },
         {
-          "id": "2",
-          "title": "Pastel Vase Set",
-          "price": 999,
-          "category": "Vases",
-          "room": "Bedroom",
-          "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
-          "createdAt": "2025-07-13T11:00:00Z",
-          "productId": "2",
+          "id": "1a53",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 799,
+          "quantity": 9
+        },
+        {
+          "id": "719b",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
           "quantity": 2
+        },
+        {
+          "id": "7006",
+          "productId": "5",
+          "title": "Wall-mounted Shelf",
+          "image": "https://i.pinimg.com/736x/46/ac/e3/46ace3c0d1abadcd363b5e77032bc63b.jpg",
+          "price": 1199,
+          "quantity": 1
         }
       ],
-      "total": 2797,
-      "address": "fgg",
+      "total": 22776,
+      "address": "asfdsdffdasdf",
       "paymentMethod": "cod",
-      "date": "2025-07-15T01:04:48.232Z"
+      "date": "2025-07-15T12:25:58.884Z"
+    },
+    {
+      "id": "759d",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "fb76",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1
+        },
+        {
+          "id": "0172",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": "$25",
+          "quantity": 1
+        },
+        {
+          "id": "1b37",
+          "productId": "185e",
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": "$40",
+          "quantity": 1
+        },
+        {
+          "id": "bf8b",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "address": "gghh",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T14:38:39.393Z"
+    },
+    {
+      "id": "c79e",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "7fd1",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1
+        },
+        {
+          "id": "e7ff",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 799,
+          "quantity": 1
+        }
+      ],
+      "total": 1798,
+      "address": "vbb",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T14:40:40.760Z"
+    },
+    {
+      "id": "9ae6",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "6b5e",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1
+        },
+        {
+          "id": "c214",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1
+        }
+      ],
+      "total": 2198,
+      "address": "nnjm,",
+      "paymentMethod": "cod",
+      "date": "2025-07-15T14:43:16.143Z"
     }
   ]
 }

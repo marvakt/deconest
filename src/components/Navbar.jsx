@@ -104,13 +104,16 @@
 
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Import cart context
+import { useCart } from "../context/CartContext"; // Cart context
+import { useWishlist } from "../context/WishlistContext"; // Wishlist context
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
-  const { cartCount } = useCart(); // Get cart item count
+
+  const { cartCount } = useCart();      // 🛒 Cart count
+  const { wishlist } = useWishlist();   // 🤍 Wishlist items
 
   return (
     <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white text-black sticky top-0 z-50">
@@ -133,15 +136,24 @@ const Navbar = () => {
 
       {/* Icons + Auth Buttons */}
       <div className="flex items-center space-x-4 relative">
-        <button
-          onClick={() => navigate("/wishlist")}
-          title="Wishlist"
-          className="hover:text-red-500 text-lg"
-        >
-          🤍
-        </button>
+        
+        {/* 🤍 Wishlist with badge */}
+        <div className="relative">
+          <button
+            onClick={() => navigate("/wishlist")}
+            title="Wishlist"
+            className="hover:text-red-500 text-lg"
+          >
+            🤍
+          </button>
+          {wishlist.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              {wishlist.length}
+            </span>
+          )}
+        </div>
 
-        {/* Cart Icon with Badge */}
+        {/* 🛒 Cart with badge */}
         <div className="relative">
           <button
             onClick={() => navigate("/cart")}
@@ -157,6 +169,7 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Auth buttons */}
         {!user ? (
           <>
             <button
