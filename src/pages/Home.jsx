@@ -107,8 +107,7 @@ const Home = () => {
           {inspirationRooms.map((look) => (
             <div
               key={look.name}
-              onClick={() => navigate(`/products?room=${look.name.toLowerCase()}`)}
-              className="min-w-[280px] relative rounded-lg overflow-hidden cursor-pointer"
+              className="min-w-[280px] relative rounded-lg overflow-hidden"
             >
               <img
                 src={look.image}
@@ -127,45 +126,57 @@ const Home = () => {
       <section className="py-12 px-6">
         <h2 className="text-2xl font-semibold mb-6 text-center uppercase">Trending Now</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {trendingProducts.map((item) => (
-            <div
-              key={item.id}
-              className="border rounded-lg p-4 hover:shadow-md transition group relative"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-48 object-cover rounded-md"
-              />
-              <div className="mt-3">
-                <h3 className="text-lg font-medium">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.price}</p>
+          {trendingProducts.map((item) => {
+            const isInWishlist = wishlist.some((w) => w.productId === item.id);
+            const wishlistItem = wishlist.find((w) => w.productId === item.id);
+
+            return (
+              <div
+                key={item.id}
+                className="border rounded-lg p-4 hover:shadow-md transition group relative"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-48 object-cover rounded-md"
+                />
+                <div className="mt-3">
+                  <h3 className="text-lg font-medium">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.price}</p>
+                </div>
+
+                {/* ❤️ Wishlist Toggle Button */}
+                <button
+                  onClick={() => {
+                    if (wishlistItem) {
+                      removeFromWishlist(wishlistItem.id);
+                    } else {
+                      addToWishlist(item);
+                    }
+                  }}
+                  className={`absolute top-2 right-2 text-xl transition ${
+                    isInWishlist ? "text-red-500" : "text-gray-400 hover:text-red-500"
+                  }`}
+                  title={isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+                >
+                  ♥
+                </button>
+
+                {/* 🛒 Add to Cart Button */}
+                <button
+                  onClick={() => {
+                    addToCart(item);
+                    if (wishlistItem) {
+                      removeFromWishlist(wishlistItem.id);
+                    }
+                  }}
+                  className="mt-3 bg-black text-white px-3 py-1 rounded text-sm hover:bg-gray-800"
+                >
+                  Add to Cart
+                </button>
               </div>
-
-              {/* ❤️ Wishlist Button */}
-              <button
-                onClick={() => addToWishlist(item)}
-                className="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-xl"
-                title="Add to Wishlist"
-              >
-                ♥
-              </button>
-
-              {/* 🛒 Add to Cart Button */}
-              <button
-                onClick={() => {
-                  addToCart(item);
-                  const wishlistItem = wishlist.find(w => w.productId === item.id);
-                  if (wishlistItem) {
-                    removeFromWishlist(wishlistItem.id); // ✅ remove using correct ID
-                  }
-                }}
-                className="mt-3 bg-black text-white px-3 py-1 rounded text-sm hover:bg-gray-800"
-              >
-                Add to Cart
-              </button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
