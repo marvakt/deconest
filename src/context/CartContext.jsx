@@ -156,7 +156,7 @@ export const CartProvider = ({ children }) => {
       const res = await axios.post("http://localhost:3000/cart", newItem);
       setCart((prev) => [...prev, res.data]);
 
-      toast.success("Added to cart!", { autoClose: 3000 });
+      toast.success("Added to cart!", { autoClose: 1000 });
     }
   };
 
@@ -164,7 +164,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = async (id) => {
     await axios.delete(`http://localhost:3000/cart/${id}`);
     setCart((prev) => prev.filter((item) => item.id !== id));
-    toast.error("Item removed from cart", { autoClose: 3000 });
+    toast.error("Item removed from cart", { autoClose: 1000 });
   };
 
   // Clear cart after successful order

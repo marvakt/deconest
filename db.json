@@ -195,18 +195,11 @@
   ],
   "wishlist": [
     {
-      "id": "ef87",
-      "productId": "1",
-      "title": "Woven Basket",
-      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
-      "price": 799
-    },
-    {
-      "id": "524e",
-      "productId": "2",
-      "title": "Pastel Vase Set",
-      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-      "price": 999
+      "id": "c306",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": "$25"
     }
   ],
   "cart": [
@@ -218,30 +211,6 @@
       "quantity": 1,
       "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
       "userId": "9170"
-    },
-    {
-      "id": "8b98",
-      "productId": "6",
-      "title": "LED Fairy Lights",
-      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
-      "price": 799,
-      "quantity": 1
-    },
-    {
-      "id": "cfc0",
-      "productId": "8",
-      "title": "Framed Quote Print",
-      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
-      "price": 799,
-      "quantity": 1
-    },
-    {
-      "id": "052c",
-      "productId": "2",
-      "title": "Pastel Vase Set",
-      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-      "price": 999,
-      "quantity": 1
     }
   ],
   "orders": [
@@ -466,6 +435,24 @@
       "address": "jhg",
       "paymentMethod": "cod",
       "date": "2025-07-15T16:14:28.356Z"
+    },
+    {
+      "id": "8a2d",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "dee6",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1
+        }
+      ],
+      "total": 999,
+      "address": "khhj",
+      "paymentMethod": "cod",
+      "date": "2025-07-16T05:22:10.984Z"
     }
   ]
 }
