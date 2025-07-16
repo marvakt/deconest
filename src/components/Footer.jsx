@@ -1,53 +1,48 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white px-6 py-10 mt-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {/* Company Info */}
+    <footer className="bg-black text-white px-6 py-10 mt-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Logo & Description */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">DecoNest</h3>
-          <p className="text-sm text-gray-400">
-            Elevate your space with timeless home decor. Designed for comfort,
-            curated for elegance.
+          <h1 className="text-2xl font-bold tracking-wider mb-3">DecoNest</h1>
+          <p className="text-sm text-gray-300">
+            Curating elegance for your space. Find aesthetic and timeless decor that reflects your style.
           </p>
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="text-md font-semibold mb-3">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:underline">Home</Link></li>
-            <li><Link to="/products" className="hover:underline">Shop</Link></li>
-            <li><Link to="/cart" className="hover:underline">Cart</Link></li>
-            <li><Link to="/profile" className="hover:underline">Profile</Link></li>
+        {/* Navigation Links */}
+        <div className="space-y-2">
+          <h3 className="font-semibold text-lg mb-2">Quick Links</h3>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li><a href="/" className="hover:text-white transition">Home</a></li>
+            <li><a href="/products" className="hover:text-white transition">Shop</a></li>
+            <li><a href="/wishlist" className="hover:text-white transition">Wishlist</a></li>
+            <li><a href="/cart" className="hover:text-white transition">Cart</a></li>
           </ul>
         </div>
 
-        {/* Contact & Social */}
-        <div>
-          <h4 className="text-md font-semibold mb-3">Contact Us</h4>
-          <p className="text-sm text-gray-400 mb-2">support@deconest.com</p>
-          <div className="flex space-x-4 mt-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="h-5 w-5" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="h-5 w-5" />
-            </a>
-            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="Pinterest" className="h-5 w-5" />
-            </a>
+        {/* Social Icons */}
+        <div className="space-y-3">
+          <h3 className="font-semibold text-lg mb-2">Follow Us</h3>
+          <div className="flex gap-4 text-xl">
+            <a href="#" className="hover:text-pink-400 transition"><FaInstagram /></a>
+            <a href="#" className="hover:text-blue-400 transition"><FaFacebookF /></a>
+            <a href="#" className="hover:text-sky-400 transition"><FaTwitter /></a>
           </div>
         </div>
       </div>
 
-      <p className="text-center text-gray-500 text-sm mt-8">
-        © {new Date().getFullYear()} DecoNest. All rights reserved.
-      </p>
+      {/* Bottom Line */}
+      <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} DecoNest. All rights reserved.
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+
+

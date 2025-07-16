@@ -53,7 +53,7 @@ function App() {
       {/* ✅ Global ToastContainer (Only once, at root level) */}
      <ToastContainer
   position="top-right"
-  autoClose= "6000"
+  autoClose= "3000"
   // ⏱️ Show for 5 seconds
   hideProgressBar={false}
   newestOnTop={false}

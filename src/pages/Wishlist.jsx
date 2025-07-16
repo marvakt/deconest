@@ -13,12 +13,12 @@ const Wishlist = () => {
   const handleAddToCart = async (item) => {
     await addToCart(item); // Handles internal toast already
     await removeFromWishlist(item.id);
-    toast.success("Moved to cart!"); // ✅ Show toast message
+    
   };
 
   const handleRemove = (id) => {
     removeFromWishlist(id);
-    toast.info("Removed from wishlist"); // ✅ Show toast message
+   
   };
 
   return (

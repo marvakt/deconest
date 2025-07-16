@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -29,9 +26,7 @@ const OrderSummary = () => {
 
         <div className="border rounded-lg p-6 bg-gray-50">
           <h3 className="text-xl font-semibold mb-4">Shipping Details</h3>
-         
           <p><strong>Address:</strong> {order.address}</p>
-       
 
           <h3 className="text-xl font-semibold mt-6 mb-4">Ordered Items</h3>
           {order.items.map((item, index) => (
@@ -43,13 +38,16 @@ const OrderSummary = () => {
               />
               <div>
                 <p className="font-medium">{item.title}</p>
+                {item.description && (
+                  <p className="text-gray-600 text-sm mb-1">{item.description}</p>
+                )}
                 <p>Quantity: {item.quantity}</p>
-                <p>Price: {item.price}</p>
+                <p>Price: ₹{item.price}</p>
               </div>
             </div>
           ))}
 
-          <h3 className="text-lg font-semibold mt-6">Total: {order.total}</h3>
+          <h3 className="text-lg font-semibold mt-6">Total: ₹{order.total}</h3>
         </div>
 
         {/* ✅ OK Button */}

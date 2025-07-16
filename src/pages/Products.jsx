@@ -43,9 +43,7 @@ const Products = () => {
     .sort((a, b) => {
       if (sortOption === "lowToHigh") return a.price - b.price;
       if (sortOption === "highToLow") return b.price - a.price;
-      if (sortOption === "newest")
-        return new Date(b.createdAt) - new Date(a.createdAt);
-      return 0;
+     
     });
 
   return (
@@ -83,7 +81,7 @@ const Products = () => {
           <option value="">Sort</option>
           <option value="lowToHigh">Price: Low → High</option>
           <option value="highToLow">Price: High → Low</option>
-          <option value="newest">Newest</option>
+          
         </select>
       </div>
 
