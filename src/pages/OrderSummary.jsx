@@ -50,7 +50,7 @@ const OrderSummary = () => {
           <h3 className="text-lg font-semibold mt-6">Total: ₹{order.total}</h3>
         </div>
 
-        {/* ✅ OK Button */}
+        
         <div className="text-center mt-8">
           <button
             onClick={() => navigate("/")}

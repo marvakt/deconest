@@ -2,7 +2,7 @@
 
 
 import React from "react";
-import Navbar from "../components/Navbar"; // Adjust path if needed
+import Navbar from "../components/Navbar"; 
 
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("loggedInUser"));

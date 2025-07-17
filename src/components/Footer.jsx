@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white px-6 py-10 mt-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Logo & Description */}
+     
         <div>
           <h1 className="text-2xl font-bold tracking-wider mb-3">DecoNest</h1>
           <p className="text-sm text-gray-300">
@@ -13,7 +13,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Navigation Links */}
+       
         <div className="space-y-2">
           <h3 className="font-semibold text-lg mb-2">Quick Links</h3>
           <ul className="space-y-1 text-sm text-gray-300">
@@ -24,7 +24,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Icons */}
+       
         <div className="space-y-3">
           <h3 className="font-semibold text-lg mb-2">Follow Us</h3>
           <div className="flex gap-4 text-xl">
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Line */}
+    
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} DecoNest. All rights reserved.
       </div>

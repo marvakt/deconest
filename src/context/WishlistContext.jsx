@@ -9,7 +9,7 @@ export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  // Fetch wishlist items for the logged-in user
+
   useEffect(() => {
     if (user) {
       axios
@@ -19,7 +19,7 @@ export const WishlistProvider = ({ children }) => {
     }
   }, [user]);
 
-  // Add item to wishlist
+
   const addToWishlist = async (product) => {
     if (!user) {
       alert("Please login to add to wishlist");
@@ -48,7 +48,7 @@ export const WishlistProvider = ({ children }) => {
     }
   };
 
-  // Remove item from wishlist
+ 
   const removeFromWishlist = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/wishlist/${id}`);

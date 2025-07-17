@@ -21,35 +21,19 @@
       "role": "user"
     },
     {
-      "id": "6c1f",
-      "fullName": "deconest",
-      "username": "deco",
-      "email": "123@gmail.com",
-      "password": "deconest",
-      "role": "user"
-    },
-    {
-      "id": "1f0e",
-      "fullName": "test",
-      "username": "test",
-      "email": "test@gmail.com",
-      "password": "test@gmail.com",
-      "role": "user"
-    },
-    {
-      "id": "2350",
+      "id": "5cc5",
       "fullName": "testcase",
       "username": "test",
-      "email": "test1@gmail.com",
+      "email": "test@gmail.com",
       "password": "testcase",
       "role": "user"
     },
     {
-      "id": "524a",
-      "fullName": "usetest",
-      "username": "use",
-      "email": "usetest@gmail.com",
-      "password": "usetest@gmail.com",
+      "id": "e933",
+      "fullName": "nishad..",
+      "username": "nishad",
+      "email": "nishad@gmail.com",
+      "password": "nishad@gmail.com",
       "role": "user"
     }
   ],
@@ -112,7 +96,7 @@
       "id": "7",
       "title": "Decorative Tray",
       "price": 799,
-      "room": "Living Room",
+      "room": "Kitchen",
       "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Stylish and functional tray for serving or organizing decor. Made with natural textures to match any theme."
@@ -160,7 +144,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/2a/50/55/2a5055064bf1d7acbe3dfcaeea04352c.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Set of 3 airtight glass jars with wooden lids. Perfect for storing dry goods while looking beautiful on open shelves."
+      "description": "Set of 3 airtight glass jars with wooden lids. Perfect for storing dry goods while looking beautiful on open shelves.",
+      "trending": false
     },
     {
       "id": "13",
@@ -169,7 +154,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/3c/bc/55/3cbc556b388b17ee570b5963f891acd1.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Set of 4 table mats with soft geometric prints. Adds charm and protects surfaces during everyday meals."
+      "description": "Set of 4 table mats with soft geometric prints. Adds charm and protects surfaces during everyday meals.",
+      "trending": false
     },
     {
       "id": "14",
@@ -178,16 +164,18 @@
       "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Earthy terracotta vases with rustic texture. A timeless set for shelves, tables, or corner styling."
+      "description": "Earthy terracotta vases with rustic texture. A timeless set for shelves, tables, or corner styling.",
+      "trending": false
     },
     {
       "id": "15",
       "title": "Scandinavian Lounge Chair",
       "price": 799,
-      "room": "Kitchen",
+      "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/8b/f6/82/8bf68236f50f74ba413eb0f1016f8b92.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Sleek and comfy lounge chair in Scandinavian style. Blends into minimal, modern, or boho interiors."
+      "description": "Sleek and comfy lounge chair in Scandinavian style. Blends into minimal, modern, or boho interiors.",
+      "trending": false
     },
     {
       "id": "16",
@@ -196,7 +184,8 @@
       "room": "Living Room",
       "image": "https://i.pinimg.com/736x/c1/59/3f/c1593f42fee5887c2ccbce56c425a647.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Solid wood bookshelf with open compartments. Organize your books and decor in refined style."
+      "description": "Solid wood bookshelf with open compartments. Organize your books and decor in refined style.",
+      "trending": false
     },
     {
       "id": "17",
@@ -205,7 +194,8 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/736x/20/78/52/2078522ebdb6b05c4731b367d8c0c072.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Durable and minimalist single bed made from premium wood. Ideal for guest rooms or cozy personal spaces."
+      "description": "Durable and minimalist single bed made from premium wood. Ideal for guest rooms or cozy personal spaces.",
+      "trending": false
     },
     {
       "id": "18",
@@ -214,102 +204,161 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/736x/e7/4f/a8/e74fa88c45d5ce6257e696779f876094.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Large framed mirror with rustic wooden finish. Perfect for makeup, styling, or hallway wall decor."
-    }
-  ],
-  "wishlist": [
-    {
-      "id": "d25d",
-      "productId": "6",
-      "title": "LED Fairy Lights",
-      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
-      "price": 799,
-      "userId": "524a"
+      "description": "Large framed mirror with rustic wooden finish. Perfect for makeup, styling, or hallway wall decor.",
+      "trending": false
     },
     {
-      "id": "9296",
+      "id": "19",
+      "title": "Textured Ceramic Vase",
+      "price": 25,
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "description": "A handcrafted ceramic vase with textured finish.",
+      "room": "Living Room",
+      "trending": true
+    },
+    {
+      "id": "20",
+      "title": "Rattan Wall Mirror",
+      "price": 40,
+      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+      "description": "Round mirror with rattan frame for a boho touch.",
+      "room": "Bedroom",
+      "trending": true
+    },
+    {
+      "id": "21",
+      "title": "Linen Throw Pillows",
+      "price": 55,
+      "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+      "description": "Set of 2 soft linen pillows in pastel tones.",
+      "room": "Living Room",
+      "trending": true
+    }
+  ],
+  "wishlist": [],
+  "cart": [
+    {
+      "id": "1bbe",
       "productId": "1",
       "title": "Woven Basket",
       "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
       "price": 799,
-      "userId": "524a"
-    }
-  ],
-  "cart": [
-    {
-      "id": "c1",
-      "productId": "2",
-      "title": "Pastel Vase Set",
-      "price": 999,
-      "quantity": 1,
-      "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80",
-      "userId": "9170"
-    },
-    {
-      "id": "d026",
-      "productId": 2,
-      "title": "Rattan Wall Mirror",
-      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
-      "price": null,
-      "quantity": 2,
+      "quantity": 3,
       "userId": "524a"
     },
     {
-      "id": "e04e",
+      "id": "1cfd",
       "productId": "6",
       "title": "LED Fairy Lights",
       "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
       "price": 799,
       "quantity": 2,
+      "userId": "524a"
+    },
+    {
+      "id": "b664",
+      "productId": "7",
+      "title": "Decorative Tray",
+      "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
+      "price": 799,
+      "quantity": 3,
+      "userId": "524a"
+    },
+    {
+      "id": "d155",
+      "productId": "8",
+      "title": "Framed Quote Print",
+      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
+      "price": 799,
+      "quantity": 1,
+      "userId": "524a"
+    },
+    {
+      "id": "717c",
+      "productId": "14",
+      "title": "Terracotta Decorative Vases (Set of 3)",
+      "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
+      "price": 799,
+      "quantity": 1,
       "userId": "524a"
     }
   ],
   "orders": [
     {
-      "id": "ce2e",
+      "id": "220e",
+      "user": "nishad@gmail.com",
+      "items": [
+        {
+          "id": "447b",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "e933"
+        }
+      ],
+      "total": 1199,
+      "address": "bbbb",
+      "paymentMethod": "cod",
+      "date": "2025-07-17T04:34:19.012Z"
+    },
+    {
+      "id": "4da1",
+      "user": "nishad@gmail.com",
+      "items": [
+        {
+          "id": "28c3",
+          "productId": "077a",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "e933"
+        }
+      ],
+      "total": 999,
+      "address": "fghjnjkllssf",
+      "paymentMethod": "cod",
+      "date": "2025-07-17T04:35:00.384Z"
+    },
+    {
+      "id": "667d",
       "user": "deco@gmail.com",
       "items": [
         {
-          "id": "69c7",
-          "productId": "6",
-          "title": "LED Fairy Lights",
-          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
-          "price": 799,
-          "quantity": 1
+          "id": "d00d",
+          "productId": "3d19",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
         }
       ],
-      "total": 799,
-      "address": "jkill;",
+      "total": 1199,
+      "address": "cvb",
       "paymentMethod": "cod",
-      "date": "2025-07-16T14:29:54.142Z"
+      "date": "2025-07-17T05:04:18.203Z"
     },
     {
-      "id": "aeb5",
-      "user": "usetest@gmail.com",
+      "id": "0f14",
+      "user": "deco@gmail.com",
       "items": [
         {
-          "id": "f348",
-          "productId": "7629",
-          "title": "Woven Basket",
-          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
-          "price": 799,
-          "quantity": 1,
-          "userId": "524a"
-        },
-        {
-          "id": "9549",
+          "id": "6aed",
           "productId": "2",
           "title": "Pastel Vase Set",
           "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
           "price": 999,
           "quantity": 1,
-          "userId": "524a"
+          "userId": "9170"
         }
       ],
-      "total": 1798,
-      "address": "fdgnbhn",
+      "total": 999,
+      "address": "vb",
       "paymentMethod": "cod",
-      "date": "2025-07-16T15:00:15.296Z"
+      "date": "2025-07-17T05:24:36.345Z"
     }
   ]
 }

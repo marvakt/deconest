@@ -25,7 +25,7 @@ const Checkout = () => {
       return;
     }
 
-    setError(""); // clear old error
+    setError(""); 
     setIsProcessing(true);
 
     const orderData = {
@@ -42,7 +42,7 @@ const Checkout = () => {
       localStorage.setItem("latestOrder", JSON.stringify(orderData));
       clearCart();
 
-      // Navigate directly after placing the order
+     
       navigate("/order-summary");
 
     } catch (error) {

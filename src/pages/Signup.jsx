@@ -39,7 +39,7 @@ const Signup = () => {
     };
 
     try {
-      // Check if user already exists by email
+      
       const res = await axios.get(
         `http://localhost:3000/users?email=${newUser.email}`
       );
@@ -49,7 +49,7 @@ const Signup = () => {
         return;
       }
 
-      // Save new user to db.json
+      
       await axios.post("http://localhost:3000/users", newUser);
 
       alert("Signup successful!");

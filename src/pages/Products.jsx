@@ -6,6 +6,7 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -52,7 +53,7 @@ const Products = () => {
 
       <h2 className="text-3xl font-bold text-center mb-6">🛍️ All Products</h2>
 
-      {/* Search + Room Filter + Sort */}
+     
       <div className="flex flex-wrap justify-center gap-4 mb-6">
         <input
           type="text"
@@ -85,14 +86,17 @@ const Products = () => {
         </select>
       </div>
 
-      {/* Product Grid */}
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filtered.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+     
     </div>
   );
 };
 
 export default Products;
+
+

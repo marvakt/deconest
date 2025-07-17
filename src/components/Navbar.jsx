@@ -2,16 +2,16 @@
 
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Cart context
-import { useWishlist } from "../context/WishlistContext"; // Wishlist context
+import { useCart } from "../context/CartContext"; 
+import { useWishlist } from "../context/WishlistContext"; 
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  const { cartCount } = useCart();      // 🛒 Cart count
-  const { wishlist } = useWishlist();   // 🤍 Wishlist items
+  const { cartCount } = useCart();      
+  const { wishlist } = useWishlist();   
 
   return (
     <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white text-black sticky top-0 z-50">
@@ -32,10 +32,8 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Icons + Auth Buttons */}
       <div className="flex items-center space-x-4 relative">
-        
-        {/* 🤍 Wishlist with badge */}
+     
         <div className="relative">
           <button
             onClick={() => navigate("/wishlist")}
@@ -51,7 +49,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* 🛒 Cart with badge */}
+     
         <div className="relative">
           <button
             onClick={() => navigate("/cart")}
@@ -67,7 +65,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Auth buttons */}
+   
         {!user ? (
           <>
             <button

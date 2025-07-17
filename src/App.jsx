@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// ✅ Toastify imports
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Pages
+
 import SignUp from './pages/Signup';
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -18,7 +17,7 @@ import Profile from './pages/Profile';
 import Wishlist from './pages/Wishlist';
 import OrderSummary from './pages/OrderSummary';
 import MyOrders from './pages/MyOrders';
-
+import Footer from './components/Footer';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() =>
     !!localStorage.getItem("loggedInUser")
@@ -49,12 +48,12 @@ function App() {
         <Route path="/my-orders" element={isLoggedIn ? <MyOrders /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-
-      {/* ✅ Global ToastContainer (Only once, at root level) */}
+<Footer/>
+  
      <ToastContainer
   position="top-right"
-  autoClose= "3000"
-  // ⏱️ Show for 5 seconds
+  autoClose= "2000"
+
   hideProgressBar={false}
   newestOnTop={false}
   closeOnClick
@@ -63,6 +62,7 @@ function App() {
   pauseOnHover
   theme="colored"
 />
+
 
     </>
   );

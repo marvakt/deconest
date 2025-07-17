@@ -4,14 +4,14 @@ import React from "react";
 import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
-import { toast } from "react-toastify"; // ✅ Import toast
+import { toast } from "react-toastify"; 
 
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
 
   const handleAddToCart = async (item) => {
-    await addToCart(item); // Handles internal toast already
+    await addToCart(item); 
     await removeFromWishlist(item.id);
     
   };

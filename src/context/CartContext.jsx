@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  // Fetch cart data for logged-in user
+  
   useEffect(() => {
     if (user) {
       axios
@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
     }
   }, [user]);
 
-  // Add product to cart
+ 
   const addToCart = async (product, quantity = 1) => {
     if (!user) {
       toast.warn("Please login to add items to cart", { autoClose: 3000 });
@@ -49,8 +49,8 @@ export const CartProvider = ({ children }) => {
         productId: product.id,
         title: product.title,
         image: product.image,
-        price: Number(product.price),      // ✅ Ensure price is a number
-        quantity: Number(quantity),        // ✅ Ensure quantity is a number
+        price: Number(product.price),     
+        quantity: Number(quantity),      
         userId: user.id,
       };
 
@@ -61,23 +61,23 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Remove item from cart
+ 
   const removeFromCart = async (id) => {
     await axios.delete(`http://localhost:3000/cart/${id}`);
     setCart((prev) => prev.filter((item) => item.id !== id));
     toast.error("Item removed from cart", { autoClose: 1000 });
   };
 
-  // Clear cart after successful order
+ 
   const clearCart = async () => {
     for (let item of cart) {
       await axios.delete(`http://localhost:3000/cart/${item.id}`);
     }
     setCart([]);
-    toast.info("Cart cleared after order", { autoClose: 1000 });
+    toast.info("order successfully", { autoClose: 1000 });
   };
 
-  // Update quantity of an item
+ 
   const updateQty = async (id, delta) => {
     const item = cart.find((c) => c.id === id);
     if (!item) return;
@@ -94,14 +94,14 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // ✅ Ensure correct numeric total
+
   const total = cart.reduce((acc, item) => {
     const price = Number(item.price);
     const qty = Number(item.quantity);
     return acc + (isNaN(price) || isNaN(qty) ? 0 : price * qty);
   }, 0);
 
-  // ✅ Correct cart count
+
   const cartCount = cart.reduce((sum, item) => {
     const qty = Number(item.quantity);
     return sum + (isNaN(qty) ? 0 : qty);
