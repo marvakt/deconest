@@ -22,7 +22,7 @@ const Navbar = () => {
         DecoNest
       </h1>
 
-      {/* Navigation Links */}
+    
       <nav className="flex gap-6 text-sm font-medium">
         <button onClick={() => navigate("/")} className="hover:text-gray-700">
           Home

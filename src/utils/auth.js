@@ -1,4 +1,4 @@
-// utils/auth.js
+
 export const saveSession = (user) => {
   localStorage.setItem("user", JSON.stringify(user));
 };

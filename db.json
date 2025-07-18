@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "admin@deconest.com",
-      "password": "admin123",
-      "role": "admin"
-    },
+  "id": "1",
+  "email": "admin@deconest.com",
+  "password": "admin123",
+  "role": "admin"
+},
     {
       "id": "2",
       "email": "user@example.com",
@@ -34,6 +34,14 @@
       "username": "nishad",
       "email": "nishad@gmail.com",
       "password": "nishad@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "b3b1",
+      "fullName": "fiya",
+      "username": "fiya",
+      "email": "fiya@gmail.com",
+      "password": "fiya@gmail.com",
       "role": "user"
     }
   ],
@@ -245,120 +253,28 @@
       "price": 799,
       "quantity": 3,
       "userId": "524a"
-    },
-    {
-      "id": "1cfd",
-      "productId": "6",
-      "title": "LED Fairy Lights",
-      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
-      "price": 799,
-      "quantity": 2,
-      "userId": "524a"
-    },
-    {
-      "id": "b664",
-      "productId": "7",
-      "title": "Decorative Tray",
-      "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
-      "price": 799,
-      "quantity": 3,
-      "userId": "524a"
-    },
-    {
-      "id": "d155",
-      "productId": "8",
-      "title": "Framed Quote Print",
-      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
-      "price": 799,
-      "quantity": 1,
-      "userId": "524a"
-    },
-    {
-      "id": "717c",
-      "productId": "14",
-      "title": "Terracotta Decorative Vases (Set of 3)",
-      "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
-      "price": 799,
-      "quantity": 1,
-      "userId": "524a"
     }
   ],
   "orders": [
+   
     {
-      "id": "220e",
-      "user": "nishad@gmail.com",
-      "items": [
-        {
-          "id": "447b",
-          "productId": "3",
-          "title": "Linen Bed Throw",
-          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
-          "price": 1199,
-          "quantity": 1,
-          "userId": "e933"
-        }
-      ],
-      "total": 1199,
-      "address": "bbbb",
-      "paymentMethod": "cod",
-      "date": "2025-07-17T04:34:19.012Z"
-    },
-    {
-      "id": "4da1",
-      "user": "nishad@gmail.com",
-      "items": [
-        {
-          "id": "28c3",
-          "productId": "077a",
-          "title": "Pastel Vase Set",
-          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-          "price": 999,
-          "quantity": 1,
-          "userId": "e933"
-        }
-      ],
-      "total": 999,
-      "address": "fghjnjkllssf",
-      "paymentMethod": "cod",
-      "date": "2025-07-17T04:35:00.384Z"
-    },
-    {
-      "id": "667d",
+      "id": "8325",
       "user": "deco@gmail.com",
       "items": [
         {
-          "id": "d00d",
-          "productId": "3d19",
-          "title": "Linen Bed Throw",
-          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
-          "price": 1199,
+          "id": "8b69",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
           "quantity": 1,
           "userId": "9170"
         }
       ],
-      "total": 1199,
-      "address": "cvb",
+      "total": 799,
+      "address": "hjk",
       "paymentMethod": "cod",
-      "date": "2025-07-17T05:04:18.203Z"
-    },
-    {
-      "id": "0f14",
-      "user": "deco@gmail.com",
-      "items": [
-        {
-          "id": "6aed",
-          "productId": "2",
-          "title": "Pastel Vase Set",
-          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-          "price": 999,
-          "quantity": 1,
-          "userId": "9170"
-        }
-      ],
-      "total": 999,
-      "address": "vb",
-      "paymentMethod": "cod",
-      "date": "2025-07-17T05:24:36.345Z"
+      "date": "2025-07-17T11:47:37.256Z"
     }
   ]
 }

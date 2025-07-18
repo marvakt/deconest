@@ -43,7 +43,7 @@ const Checkout = () => {
       clearCart();
 
      
-      navigate("/order-summary");
+      navigate("/order-summary");bbbbbbbbbbbbbbbbbbj
 
     } catch (error) {
       console.error("Order failed:", error);
