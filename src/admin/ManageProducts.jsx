@@ -1,0 +1,348 @@
+
+
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+
+// const ManageProducts = () => {
+//   const [products, setProducts] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const itemsPerPage = 8;
+
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   const fetchProducts = async () => {
+//     try {
+//       const res = await axios.get('http://localhost:3000/products');
+//       setProducts(res.data);
+//     } catch (error) {
+//       toast.error("Failed to fetch products");
+//     }
+//   };
+
+//   const handleDelete = async (id) => {
+//     if (window.confirm('Are you sure you want to delete this product?')) {
+//       try {
+//         await axios.delete(`http://localhost:3000/products/${id}`);
+//         toast.success("Product deleted");
+//         fetchProducts();
+//       } catch (error) {
+//         toast.error("Failed to delete");
+//       }
+//     }
+//   };
+
+//   const totalStock = products.reduce((acc, item) => acc + (item.stock || 0), 0);
+
+//   const categoryStock = products.reduce((acc, item) => {
+//     const category = item.category || 'Uncategorized';
+//     acc[category] = (acc[category] || 0) + (item.stock || 0);
+//     return acc;
+//   }, {});
+
+//   // Filter by search term
+//   const filtered = products.filter(product =>
+//     product.title.toLowerCase().includes(searchTerm.toLowerCase())
+//   );
+
+//   // Pagination logic
+//   const totalPages = Math.ceil(filtered.length / itemsPerPage);
+//   const startIndex = (currentPage - 1) * itemsPerPage;
+//   const endIndex = startIndex + itemsPerPage;
+//   const paginatedProducts = filtered.slice(startIndex, endIndex);
+
+//   const goToPage = (page) => {
+//     if (page >= 1 && page <= totalPages) {
+//       setCurrentPage(page);
+//     }
+//   };
+
+//   return (
+//     <div className="p-6">
+//       <h1 className="text-2xl font-semibold mb-4">Manage Products</h1>
+
+//       {/* 🟢 Stock Summary */}
+//       <div className="mb-6">
+//         <p className="text-lg font-semibold text-gray-700 mb-2">📦 Total Stock: <span className="text-blue-600">{totalStock}</span></p>
+//         <div className="flex flex-wrap gap-3">
+//           {Object.entries(categoryStock).map(([category, count]) => (
+//             <span key={category} className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full shadow-sm">
+//               {category}: {count}
+//             </span>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* 🔍 Search Bar */}
+//       <div className="mb-6">
+//         <input
+//           type="text"
+//           placeholder="Search by product title..."
+//           value={searchTerm}
+//           onChange={(e) => {
+//             setSearchTerm(e.target.value);
+//             setCurrentPage(1); // reset to page 1 when searching
+//           }}
+//           className="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+//         />
+//       </div>
+
+//       {/* 📋 Product List */}
+//       {paginatedProducts.length === 0 ? (
+//         <p>No products found.</p>
+//       ) : (
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
+//           {paginatedProducts.map(product => (
+//             <div key={product.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition">
+//               <img
+//                 src={product.image}
+//                 alt={product.title}
+//                 className="w-full h-40 object-cover rounded mb-3"
+//               />
+//               <h2 className="text-lg font-bold">{product.title}</h2>
+//               <p className="text-sm text-gray-600">{product.category}</p>
+//               <p className="text-green-600 font-semibold">₹{product.price}</p>
+//               <p className="text-sm text-gray-500">Stock: {product.stock || 0}</p>
+
+//               <div className="mt-4 flex gap-2">
+//                 <button
+//                   onClick={() => navigate(`/admin/update-product/${product.id}`)}
+//                   className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+//                 >
+//                   Edit
+//                 </button>
+//                 <button
+//                   onClick={() => handleDelete(product.id)}
+//                   className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+//                 >
+//                   Delete
+//                 </button>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       )}
+
+//       {/* 📄 Pagination Controls */}
+//       {totalPages > 1 && (
+//         <div className="flex justify-center items-center gap-2">
+//           <button
+//             onClick={() => goToPage(currentPage - 1)}
+//             disabled={currentPage === 1}
+//             className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+//           >
+//             Prev
+//           </button>
+
+//           {[...Array(totalPages)].map((_, i) => (
+//             <button
+//               key={i + 1}
+//               onClick={() => goToPage(i + 1)}
+//               className={`px-3 py-1 rounded ${
+//                 currentPage === i + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'
+//               }`}
+//             >
+//               {i + 1}
+//             </button>
+//           ))}
+
+//           <button
+//             onClick={() => goToPage(currentPage + 1)}
+//             disabled={currentPage === totalPages}
+//             className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+//           >
+//             Next
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ManageProducts;
+
+
+
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+const ManageProducts = () => {
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const res = await axios.get('http://localhost:3000/products');
+      setProducts(res.data);
+    } catch (error) {
+      toast.error("Failed to fetch products");
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      try {
+        await axios.delete(`http://localhost:3000/products/${id}`);
+        toast.success("Product deleted");
+        fetchProducts();
+      } catch (error) {
+        toast.error("Failed to delete");
+      }
+    }
+  };
+
+  const totalStock = products.reduce((acc, item) => acc + (item.stock || 0), 0);
+
+  const categoryStock = products.reduce((acc, item) => {
+    const category = item.category || 'Uncategorized';
+    acc[category] = (acc[category] || 0) + (item.stock || 0);
+    return acc;
+  }, {});
+
+  const filtered = products.filter(product =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedProducts = filtered.slice(startIndex, endIndex);
+
+  const goToPage = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  return (
+    <div className="p-8 min-h-screen bg-gradient-to-br from-pink-50 via-white to-blue-50">
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">🛒 Manage Products</h1>
+
+      {/* Stock Summary */}
+      <div className="mb-6">
+        <p className="text-lg font-semibold text-gray-700 mb-2">
+          📦 Total Stock: <span className="text-blue-600">{totalStock}</span>
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {Object.entries(categoryStock).map(([category, count]) => (
+            <span
+              key={category}
+              className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full shadow-sm"
+            >
+              {category}: {count}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Search by product title..."
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setCurrentPage(1);
+          }}
+          className="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      {/* Product Grid */}
+      {paginatedProducts.length === 0 ? (
+        <p className="text-gray-500">No products found.</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+          {paginatedProducts.map(product => (
+            <div
+              key={product.id}
+              className="bg-white border rounded-2xl p-4 shadow hover:shadow-md transition-all"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-40 object-cover rounded-xl mb-3"
+              />
+              <h2 className="text-lg font-bold text-gray-800">{product.title}</h2>
+              <p className="text-sm text-gray-600">{product.category}</p>
+              <p className="text-green-600 font-semibold mt-1">₹{product.price}</p>
+              <p className="text-sm text-gray-500">Stock: {product.stock || 0}</p>
+
+              <div className="mt-4 flex gap-2">
+                <button
+                  onClick={() => navigate(`/admin/update-product/${product.id}`)}
+                  className="bg-blue-200 hover:bg-blue-300 text-blue-900 text-sm font-medium px-4 py-1.5 rounded-xl transition"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(product.id)}
+                  className="bg-red-200 hover:bg-red-300 text-red-800 text-sm font-medium px-4 py-1.5 rounded-xl transition"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-2">
+          <button
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-3 py-1.5 text-sm bg-gray-200 rounded-xl hover:bg-gray-300 disabled:opacity-50"
+          >
+            Prev
+          </button>
+
+          {[...Array(totalPages)].map((_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => goToPage(i + 1)}
+              className={`px-3 py-1.5 text-sm rounded-xl transition ${
+                currentPage === i + 1
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-100 hover:bg-gray-300'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="px-3 py-1.5 text-sm bg-gray-200 rounded-xl hover:bg-gray-300 disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ManageProducts;
+
+

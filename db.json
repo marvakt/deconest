@@ -1,16 +1,18 @@
 {
   "users": [
     {
-  "id": "1",
-  "email": "admin@deconest.com",
-  "password": "admin123",
-  "role": "admin"
-},
+      "id": "1",
+      "email": "admin@deconest.com",
+      "password": "admin123",
+      "role": "admin",
+      "isBlocked": false
+    },
     {
       "id": "2",
       "email": "user@example.com",
       "password": "user123",
-      "role": "user"
+      "role": "user",
+      "isBlocked": true
     },
     {
       "id": "9170",
@@ -18,15 +20,8 @@
       "username": "deco",
       "email": "deco@gmail.com",
       "password": "deconest",
-      "role": "user"
-    },
-    {
-      "id": "5cc5",
-      "fullName": "testcase",
-      "username": "test",
-      "email": "test@gmail.com",
-      "password": "testcase",
-      "role": "user"
+      "role": "user",
+      "isBlocked": false
     },
     {
       "id": "e933",
@@ -34,7 +29,8 @@
       "username": "nishad",
       "email": "nishad@gmail.com",
       "password": "nishad@gmail.com",
-      "role": "user"
+      "role": "user",
+      "isBlocked": false
     },
     {
       "id": "b3b1",
@@ -42,7 +38,8 @@
       "username": "fiya",
       "email": "fiya@gmail.com",
       "password": "fiya@gmail.com",
-      "role": "user"
+      "role": "user",
+      "isBlocked": false
     }
   ],
   "products": [
@@ -53,7 +50,9 @@
       "room": "Living Room",
       "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Handwoven natural fiber basket that adds rustic charm to your living room. Perfect for storage or as wall decor."
+      "description": "Handwoven natural fiber basket that adds rustic charm to your living room. Perfect for storage or as wall decor.",
+      "isArchived": false,
+      "stock": 4
     },
     {
       "id": "2",
@@ -62,7 +61,8 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "createdAt": "2025-07-13T11:00:00Z",
-      "description": "A set of 3 pastel-toned ceramic vases perfect for minimalist decor. Ideal for dried flowers or as accent pieces."
+      "description": "A set of 3 pastel-toned ceramic vases perfect for minimalist decor. Ideal for dried flowers or as accent pieces.",
+      "isArchived": false
     },
     {
       "id": "3",
@@ -71,7 +71,8 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
       "createdAt": "2025-07-13T12:00:00Z",
-      "description": "Soft, breathable linen bed throw in a neutral tone. Adds cozy texture and elegance to any bedding setup."
+      "description": "Soft, breathable linen bed throw in a neutral tone. Adds cozy texture and elegance to any bedding setup.",
+      "isArchived": false
     },
     {
       "id": "4",
@@ -80,7 +81,8 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
       "createdAt": "2025-07-13T12:00:00Z",
-      "description": "Elegant sheer canopy net to add a dreamy, romantic touch to your bedroom. Perfect for both style and comfort."
+      "description": "Elegant sheer canopy net to add a dreamy, romantic touch to your bedroom. Perfect for both style and comfort.",
+      "isArchived": false
     },
     {
       "id": "5",
@@ -89,7 +91,8 @@
       "room": "Bedroom",
       "image": "https://i.pinimg.com/736x/46/ac/e3/46ace3c0d1abadcd363b5e77032bc63b.jpg",
       "createdAt": "2025-07-13T12:00:00Z",
-      "description": "Minimal wooden shelf perfect for displaying decor, books, or plants. Save space while elevating your wall aesthetics."
+      "description": "Minimal wooden shelf perfect for displaying decor, books, or plants. Save space while elevating your wall aesthetics.",
+      "isArchived": false
     },
     {
       "id": "6",
@@ -98,7 +101,8 @@
       "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Warm white LED fairy lights to create a magical ambiance in any room. Perfect for cozy corners or festive setups."
+      "description": "Warm white LED fairy lights to create a magical ambiance in any room. Perfect for cozy corners or festive setups.",
+      "isArchived": false
     },
     {
       "id": "7",
@@ -107,7 +111,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Stylish and functional tray for serving or organizing decor. Made with natural textures to match any theme."
+      "description": "Stylish and functional tray for serving or organizing decor. Made with natural textures to match any theme.",
+      "isArchived": false
     },
     {
       "id": "8",
@@ -116,7 +121,8 @@
       "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Inspirational quote print in a minimalist frame. Adds character and motivation to your walls."
+      "description": "Inspirational quote print in a minimalist frame. Adds character and motivation to your walls.",
+      "isArchived": false
     },
     {
       "id": "9",
@@ -125,7 +131,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/0f/18/f9/0f18f90ac723ba9059a275a18c9a7dd9.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Chic acacia wood board for serving or cutting. Great for cheese platters and kitchen decor."
+      "description": "Chic acacia wood board for serving or cutting. Great for cheese platters and kitchen decor.",
+      "isArchived": false
     },
     {
       "id": "10",
@@ -134,7 +141,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/7a/88/77/7a887727c68490480a5aef9843375395.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Elegant ceramic holder to organize your kitchen tools. Functional, durable, and matches modern kitchen aesthetics."
+      "description": "Elegant ceramic holder to organize your kitchen tools. Functional, durable, and matches modern kitchen aesthetics.",
+      "isArchived": false
     },
     {
       "id": "11",
@@ -143,7 +151,8 @@
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/3b/49/06/3b49062243ed4a3434a7881896668ebe.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
-      "description": "Stylish ceramic utensil holder with a matte finish. Keeps your tools handy and kitchen clutter-free."
+      "description": "Stylish ceramic utensil holder with a matte finish. Keeps your tools handy and kitchen clutter-free.",
+      "isArchived": false
     },
     {
       "id": "12",
@@ -153,7 +162,8 @@
       "image": "https://i.pinimg.com/1200x/2a/50/55/2a5055064bf1d7acbe3dfcaeea04352c.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Set of 3 airtight glass jars with wooden lids. Perfect for storing dry goods while looking beautiful on open shelves.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "13",
@@ -163,7 +173,8 @@
       "image": "https://i.pinimg.com/1200x/3c/bc/55/3cbc556b388b17ee570b5963f891acd1.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Set of 4 table mats with soft geometric prints. Adds charm and protects surfaces during everyday meals.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "14",
@@ -173,7 +184,8 @@
       "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Earthy terracotta vases with rustic texture. A timeless set for shelves, tables, or corner styling.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "15",
@@ -183,7 +195,8 @@
       "image": "https://i.pinimg.com/1200x/8b/f6/82/8bf68236f50f74ba413eb0f1016f8b92.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Sleek and comfy lounge chair in Scandinavian style. Blends into minimal, modern, or boho interiors.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "16",
@@ -193,7 +206,8 @@
       "image": "https://i.pinimg.com/736x/c1/59/3f/c1593f42fee5887c2ccbce56c425a647.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Solid wood bookshelf with open compartments. Organize your books and decor in refined style.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "17",
@@ -203,7 +217,8 @@
       "image": "https://i.pinimg.com/736x/20/78/52/2078522ebdb6b05c4731b367d8c0c072.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Durable and minimalist single bed made from premium wood. Ideal for guest rooms or cozy personal spaces.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "18",
@@ -213,7 +228,8 @@
       "image": "https://i.pinimg.com/736x/e7/4f/a8/e74fa88c45d5ce6257e696779f876094.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Large framed mirror with rustic wooden finish. Perfect for makeup, styling, or hallway wall decor.",
-      "trending": false
+      "trending": false,
+      "isArchived": false
     },
     {
       "id": "19",
@@ -222,7 +238,8 @@
       "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
       "description": "A handcrafted ceramic vase with textured finish.",
       "room": "Living Room",
-      "trending": true
+      "trending": true,
+      "isArchived": false
     },
     {
       "id": "20",
@@ -231,7 +248,8 @@
       "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
       "description": "Round mirror with rattan frame for a boho touch.",
       "room": "Bedroom",
-      "trending": true
+      "trending": true,
+      "isArchived": false
     },
     {
       "id": "21",
@@ -240,7 +258,18 @@
       "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
       "description": "Set of 2 soft linen pillows in pastel tones.",
       "room": "Living Room",
-      "trending": true
+      "trending": true,
+      "isArchived": false
+    },
+    {
+      "id": "a614",
+      "title": "dummy",
+      "image": "https://i.pinimg.com/1200x/7b/d5/b0/7bd5b08c60698e6d9a225a670408fe35.jpg",
+      "category": "test",
+      "price": "500",
+      "room": "bedroom",
+      "style": "fcgvhjk,m;l",
+      "description": "b,,loikjhhgfddxd"
     }
   ],
   "wishlist": [],
@@ -256,25 +285,130 @@
     }
   ],
   "orders": [
-   
     {
-      "id": "8325",
+      "id": "229a",
       "user": "deco@gmail.com",
       "items": [
         {
-          "id": "8b69",
+          "id": "0c94",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "70ab",
+          "productId": "52da",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 2198,
+      "address": "jkkll",
+      "paymentMethod": "cod",
+      "date": "2025-07-19T05:01:56.984Z",
+      "status": "Shipped"
+    },
+    {
+      "id": "bf65",
+      "user": "admin@deconest.com",
+      "items": [
+        {
+          "id": "0428",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "1"
+        },
+        {
+          "id": "7de5",
           "productId": "6",
           "title": "LED Fairy Lights",
           "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
           "price": 799,
           "quantity": 1,
+          "userId": "1"
+        },
+        {
+          "id": "0b28",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "1"
+        }
+      ],
+      "total": 2597,
+      "address": "nmk,l,k",
+      "paymentMethod": "cod",
+      "date": "2025-07-19T07:51:16.993Z",
+      "status": "Delivered"
+    },
+    {
+      "id": "1be9",
+      "user": "admin@deconest.com",
+      "items": [
+        {
+          "id": "f5ba",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "1"
+        }
+      ],
+      "total": 999,
+      "address": "ghjj",
+      "paymentMethod": "cod",
+      "date": "2025-07-19T09:04:48.407Z",
+      "status": "Pending"
+    },
+    {
+      "id": "1713",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "abb1",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "1a3f",
+          "productId": "14",
+          "title": "Terracotta Decorative Vases (Set of 3)",
+          "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "4ee4",
+          "productId": "1ace",
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 1,
           "userId": "9170"
         }
       ],
-      "total": 799,
-      "address": "hjk",
+      "total": 1823,
+      "address": "jkkkk",
       "paymentMethod": "cod",
-      "date": "2025-07-17T11:47:37.256Z"
+      "date": "2025-07-19T16:18:40.207Z",
+      "status": "Cancelled"
     }
   ]
 }
