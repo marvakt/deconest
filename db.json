@@ -19,7 +19,7 @@
       "fullName": "deconest",
       "username": "deco",
       "email": "deco@gmail.com",
-      "password": "deconest",
+      "password": "deco@gmail.com",
       "role": "user",
       "isBlocked": false
     },
@@ -272,7 +272,104 @@
       "description": "b,,loikjhhgfddxd"
     }
   ],
-  "wishlist": [],
+  "wishlist": [
+    {
+      "id": "906b",
+      "productId": "8",
+      "title": "Framed Quote Print",
+      "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
+      "price": 799,
+      "userId": "9170"
+    },
+    {
+      "id": "37c0",
+      "productId": "4",
+      "title": "Bed Canopy Net",
+      "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+      "price": 1199,
+      "userId": "9170"
+    },
+    {
+      "id": "4b1f",
+      "productId": "6",
+      "title": "LED Fairy Lights",
+      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+      "price": 799,
+      "userId": "9170"
+    },
+    {
+      "id": "ba00",
+      "productId": "6",
+      "title": "LED Fairy Lights",
+      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+      "price": 799,
+      "userId": "1"
+    },
+    {
+      "id": "0bce",
+      "productId": "3",
+      "title": "Linen Bed Throw",
+      "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+      "price": 1199,
+      "userId": "1"
+    },
+    {
+      "id": "6919",
+      "productId": 3,
+      "title": "Linen Throw Pillows",
+      "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+      "price": 55,
+      "userId": "1"
+    },
+    {
+      "id": "2c1e",
+      "productId": 2,
+      "title": "Rattan Wall Mirror",
+      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+      "price": 40,
+      "userId": "1"
+    },
+    {
+      "id": "e84f",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "userId": "9170"
+    },
+    {
+      "id": "2275",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": 25,
+      "userId": "9170"
+    },
+    {
+      "id": "77d2",
+      "productId": "1",
+      "title": "Woven Basket",
+      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+      "price": 799,
+      "userId": "9170"
+    },
+    {
+      "id": "091c",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": 25,
+      "userId": "1"
+    },
+    {
+      "id": "d87b",
+      "productId": "1",
+      "title": "Woven Basket",
+      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+      "price": 799,
+      "userId": "1"
+    }
+  ],
   "cart": [
     {
       "id": "1bbe",
@@ -282,6 +379,33 @@
       "price": 799,
       "quantity": 3,
       "userId": "524a"
+    },
+    {
+      "id": "c514",
+      "productId": "0073",
+      "title": "Linen Throw Pillows",
+      "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+      "price": 55,
+      "quantity": 1,
+      "userId": "9170"
+    },
+    {
+      "id": "415c",
+      "productId": "0477",
+      "title": "Linen Bed Throw",
+      "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+      "price": 1199,
+      "quantity": 1,
+      "userId": "9170"
+    },
+    {
+      "id": "4407",
+      "productId": "37c0",
+      "title": "Bed Canopy Net",
+      "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+      "price": 1199,
+      "quantity": 1,
+      "userId": "9170"
     }
   ],
   "orders": [
@@ -312,7 +436,7 @@
       "address": "jkkll",
       "paymentMethod": "cod",
       "date": "2025-07-19T05:01:56.984Z",
-      "status": "Shipped"
+      "status": "Pending"
     },
     {
       "id": "bf65",
@@ -370,7 +494,7 @@
       "address": "ghjj",
       "paymentMethod": "cod",
       "date": "2025-07-19T09:04:48.407Z",
-      "status": "Pending"
+      "status": "Delivered"
     },
     {
       "id": "1713",
@@ -409,6 +533,258 @@
       "paymentMethod": "cod",
       "date": "2025-07-19T16:18:40.207Z",
       "status": "Cancelled"
+    },
+    {
+      "id": "22cb",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "6adc",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "33bf",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1798,
+      "address": "  b  bgvg",
+      "paymentMethod": "cod",
+      "date": "2025-07-20T13:21:49.506Z"
+    },
+    {
+      "id": "86de",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "0f75",
+          "productId": "20",
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "2d00",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "e1db",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1079,
+      "address": "gghj",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T01:21:07.008Z"
+    },
+    {
+      "id": "804d",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "fd9a",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "757d",
+          "productId": "10",
+          "title": "Ceramic Utensil Holder",
+          "image": "https://i.pinimg.com/1200x/7a/88/77/7a887727c68490480a5aef9843375395.jpg",
+          "price": 799,
+          "quantity": 2,
+          "userId": "9170"
+        }
+      ],
+      "total": 2597,
+      "address": "dgg",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T04:28:44.646Z"
+    },
+    {
+      "id": "d4cd",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "76ab",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 999,
+      "address": "fghh",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T04:32:20.868Z"
+    },
+    {
+      "id": "b6ad",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "8082",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "5cb0",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 824,
+      "address": "fhjk",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T05:29:28.143Z"
+    },
+    {
+      "id": "6e29",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "54b6",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "65fa",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1998,
+      "address": "nmnm",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T06:04:06.073Z"
+    },
+    {
+      "id": "27ee",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "cf9d",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "e6c5",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1039,
+      "address": "hjk",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T07:07:19.478Z"
+    },
+    {
+      "id": "48dd",
+      "user": "admin@deconest.com",
+      "items": [
+        {
+          "id": "f674",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "1"
+        },
+        {
+          "id": "5314",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 3,
+          "userId": "1"
+        },
+        {
+          "id": "2ffc",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 2,
+          "userId": "1"
+        }
+      ],
+      "total": 969,
+      "address": "cvbn",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T09:20:03.930Z"
+    },
+    {
+      "id": "d2a0",
+      "user": "admin@deconest.com",
+      "items": [
+        {
+          "id": "c671",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "1"
+        }
+      ],
+      "total": 1199,
+      "address": "padikkal",
+      "paymentMethod": "cod",
+      "date": "2025-07-21T15:05:24.230Z"
     }
   ]
 }
