@@ -1,5 +1,8 @@
+
+
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
@@ -39,7 +42,6 @@ const Signup = () => {
     };
 
     try {
-      
       const res = await axios.get(
         `http://localhost:3000/users?email=${newUser.email}`
       );
@@ -49,7 +51,6 @@ const Signup = () => {
         return;
       }
 
-      
       await axios.post("http://localhost:3000/users", newUser);
 
       alert("Signup successful!");
@@ -133,6 +134,13 @@ const Signup = () => {
           >
             Sign Up
           </button>
+
+          <p className="mt-4 text-center text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link to="/login" className="text-blue-600 hover:underline font-medium">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
     </div>
@@ -140,5 +148,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-

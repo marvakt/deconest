@@ -1,196 +1,128 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import axios from "axios";
-
-// const Login = () => {
-//   const navigate = useNavigate();
-//   const [formData, setFormData] = useState({ email: "", password: "" });
-//   const [error, setError] = useState("");
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//     setError("");
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const res = await axios.get(
-//         `http://localhost:3000/users?email=${formData.email}&password=${formData.password}`
-//       );
-
-//       if (res.data.length === 0) {
-//         setError("Invalid email or password.");
-//         return;
-//       }
-
-//       const user = res.data[0];
-//       localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-//       if (user.role === "admin") {
-//         navigate("/admin-dashboard");
-//       } else {
-//         navigate("/");
-//       }
-//     } catch (err) {
-//       console.error("Login Error:", err);
-//       setError("Something went wrong. Try again.");
-//     }
-//   };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-white text-black px-4">
-//       <div className="w-full max-w-md border border-black p-6 rounded-md shadow-md">
-//         <h2 className="text-3xl font-bold mb-2 text-center">Welcome Back</h2>
-//         <p className="text-sm mb-6 text-center text-gray-600">Log in to your account</p>
-
-//         <form onSubmit={handleSubmit} className="space-y-5">
-//           <div>
-//             <label className="block text-sm mb-1 font-medium">Email</label>
-//             <input
-//               type="email"
-//               name="email"
-//               value={formData.email}
-//               onChange={handleChange}
-//               required
-//               className="w-full px-3 py-2 border border-gray-300 rounded"
-//             />
-//           </div>
-
-//           <div>
-//             <label className="block text-sm mb-1 font-medium">Password</label>
-//             <input
-//               type="password"
-//               name="password"
-//               value={formData.password}
-//               onChange={handleChange}
-//               required
-//               className="w-full px-3 py-2 border border-gray-300 rounded"
-//             />
-//           </div>
-
-//           {error && <p className="text-red-600 text-sm">{error}</p>}
-
-//           <button
-//             type="submit"
-//             className="w-full bg-black text-white py-2 rounded font-medium hover:bg-gray-800"
-//           >
-//             Log In
-//           </button>
-//         </form>
-
-//         <p className="mt-6 text-sm text-center">
-//           Don’t have an account?{" "}
-//           <a href="/signup" className="underline hover:text-black font-medium">
-//             Sign up
-//           </a>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
+  const { login } = useAuth();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError("");
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+    setErrors((prev) => ({
+      ...prev,
+      [e.target.name]: ""
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const newErrors = {};
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     try {
-      const res = await axios.get(
-        `http://localhost:3000/users?email=${formData.email}&password=${formData.password}`
-      );
-
-      if (res.data.length === 0) {
-        setError("Invalid email or password.");
-        return;
-      }
-
+      const res = await axios.get(`http://localhost:3000/users?email=${formData.email}`);
       const user = res.data[0];
 
-      // 🔒 Blocked user check
-      if (user.isBlocked) {
-        setError("You are blocked by the admin.");
+      if (!user) {
+        toast.error("User not found");
         return;
       }
 
-      localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-      if (user.role === "admin") {
-        navigate("/admin-dashboard");
-      } else {
-        navigate("/");
+      if (user.password !== formData.password) {
+        toast.error("Invalid password");
+        return;
       }
+
+      if (user.blocked) {
+        toast.error("You are blocked by admin");
+        return;
+      }
+
+      // Set user in context + localStorage
+      login(user);
+
+      // Delay navigation to allow context to sync
+      setTimeout(() => {
+        if (user.role === "admin") {
+          toast.success("Welcome Admin!");
+          navigate("/admin/dashboard", { replace: true });
+        } else {
+          toast.success("Login successful!");
+          navigate("/", { replace: true });
+        }
+      }, 100); // slight delay (100ms) to avoid race condition
+
     } catch (err) {
-      console.error("Login Error:", err);
-      setError("Something went wrong. Try again.");
+      console.error("Login error:", err);
+      toast.error("Something went wrong");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white text-black px-4">
-      <div className="w-full max-w-md border border-black p-6 rounded-md shadow-md">
-        <h2 className="text-3xl font-bold mb-2 text-center">Welcome Back</h2>
-        <p className="text-sm mb-6 text-center text-gray-600">Log in to your account</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="block text-sm mb-1 font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-            />
-          </div>
+        <div className="mb-4">
+          <label className="block mb-1 font-medium">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full border px-3 py-2 rounded-md"
+          />
+          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+        </div>
 
-          <div>
-            <label className="block text-sm mb-1 font-medium">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-            />
-          </div>
+        <div className="mb-6">
+          <label className="block mb-1 font-medium">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full border px-3 py-2 rounded-md"
+          />
+          {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+        </div>
 
-          {error && <p className="text-red-600 text-sm">{error}</p>}
+        <button
+          type="submit"
+          className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
+        >
+          Login
+        </button>
 
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-2 rounded font-medium hover:bg-gray-800"
-          >
-            Log In
-          </button>
-        </form>
-
-        <p className="mt-6 text-sm text-center">
-          Don’t have an account?{" "}
-          <a href="/signup" className="underline hover:text-black font-medium">
-            Sign up
-          </a>
+        <p className="mt-4 text-center text-sm text-gray-600">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-600 hover:underline font-medium">
+            Sign Up
+          </Link>
         </p>
-      </div>
+      </form>
     </div>
   );
 };
