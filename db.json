@@ -396,6 +396,14 @@
       "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
       "price": "800",
       "userId": "9170"
+    },
+    {
+      "id": "20b9",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": 25,
+      "userId": "9170"
     }
   ],
   "cart": [
@@ -425,6 +433,15 @@
       "price": 55,
       "quantity": 1,
       "userId": "1"
+    },
+    {
+      "id": "32b5",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": 25,
+      "quantity": 1,
+      "userId": "9170"
     }
   ],
   "orders": [
@@ -455,7 +472,7 @@
       "address": "jkkll",
       "paymentMethod": "cod",
       "date": "2025-07-19T05:01:56.984Z",
-      "status": "Shipped"
+      "status": "Delivered"
     },
     {
       "id": "bf65",
