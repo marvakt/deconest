@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast'; // ✅ hot-toast used
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -23,7 +23,7 @@ const ManageProducts = () => {
       const res = await axios.get('http://localhost:3000/products');
       setProducts(res.data);
     } catch (error) {
-      toast.error("Failed to fetch products");
+      toast.error("Failed to fetch products"); // ✅ updated
     }
   };
 
@@ -31,10 +31,10 @@ const ManageProducts = () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
         await axios.delete(`http://localhost:3000/products/${id}`);
-        toast.success("Product deleted");
+        toast.success("Product deleted"); // ✅ updated
         fetchProducts();
       } catch (error) {
-        toast.error("Failed to delete");
+        toast.error("Failed to delete"); // ✅ updated
       }
     }
   };
@@ -150,3 +150,4 @@ const ManageProducts = () => {
 };
 
 export default ManageProducts;
+

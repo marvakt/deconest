@@ -1,21 +1,18 @@
 
 
 
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast'; // ✅ updated
 
 const AddProduct = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     image: '',
-    category: '',
     price: '',
     room: '',
-    style: '',
     description: '',
   });
 
@@ -28,10 +25,10 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3000/products', formData);
-      toast.success('Product added successfully!');
+      toast.success('Product added successfully!'); // ✅ hot-toast
       navigate('/admin/manage-products');
     } catch (error) {
-      toast.error('Failed to add product');
+      toast.error('Failed to add product'); // ✅ hot-toast
     }
   };
 
@@ -64,29 +61,9 @@ const AddProduct = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               type="text"
-              name="category"
-              placeholder="Category (e.g. Decor, Lighting)"
-              value={formData.category}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-300"
-            />
-
-            <input
-              type="text"
               name="room"
               placeholder="Room (e.g. Living Room)"
               value={formData.room}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-300"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="style"
-              placeholder="Style (e.g. Boho, Minimal)"
-              value={formData.style}
               onChange={handleChange}
               className="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-300"
             />

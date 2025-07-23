@@ -1,9 +1,11 @@
 
 
 
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast'; // ✅ Changed from react-toastify to react-hot-toast
 import { FaEye, FaTrash } from 'react-icons/fa';
 
 const AdminOrders = () => {
@@ -198,6 +200,5 @@ const AdminOrders = () => {
 };
 
 export default AdminOrders;
-
 
 

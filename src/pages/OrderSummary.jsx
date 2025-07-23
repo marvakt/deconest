@@ -232,8 +232,8 @@ const OrderSummary = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
+{/* 
+      <Footer /> */}
 
       {/* Custom Styles */}
       <style jsx>{`

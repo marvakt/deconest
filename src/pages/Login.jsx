@@ -1,9 +1,10 @@
 
 
+
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast"; // ✅ replaced toastify with hot-toast
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
@@ -69,8 +70,7 @@ const Login = () => {
           toast.success("Login successful!");
           navigate("/", { replace: true });
         }
-      }, 100); // slight delay (100ms) to avoid race condition
-
+      }, 100);
     } catch (err) {
       console.error("Login error:", err);
       toast.error("Something went wrong");

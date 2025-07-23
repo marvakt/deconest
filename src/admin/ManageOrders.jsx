@@ -48,7 +48,7 @@ const ManageOrders = () => {
 
   return (
     <>
-      <AdminNavbar />
+      {/* <AdminNavbar /> */}
       <div className="p-6">
         <h1 className="text-3xl font-semibold mb-4">Manage Orders</h1>
         <div className="overflow-x-auto">
