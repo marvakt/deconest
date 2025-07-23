@@ -92,7 +92,7 @@ const AdminOrders = () => {
                 <React.Fragment key={order.id}>
                   <tr className="border-t hover:bg-pink-50 transition">
                     <td className="px-4 py-3">{order.id}</td>
-                    <td className="px-4 py-3">{order.user?.name || 'N/A'}</td>
+                    <td className="px-4 py-3">{order.user || 'N/A'}</td>
                     <td className="px-4 py-3">{order.date || 'N/A'}</td>
                     <td className="px-4 py-3 font-semibold text-pink-700">₹{order.total}</td>
                     <td className="px-4 py-3">
@@ -127,7 +127,7 @@ const AdminOrders = () => {
                     <tr className="bg-pink-50">
                       <td colSpan="6" className="px-6 py-4">
                         <div className="border border-pink-200 p-4 rounded-lg bg-pink-100 text-sm text-pink-900 space-y-2">
-                          <p><strong>User:</strong> {order.user?.name}</p>
+                          <p><strong>User:</strong> {order.user?.user}</p>
                           <p><strong>Email:</strong> {order.user?.email}</p>
                           <p><strong>Order Date:</strong> {order.date || 'N/A'}</p>
                           <p><strong>Status:</strong> {order.status}</p>
@@ -198,3 +198,6 @@ const AdminOrders = () => {
 };
 
 export default AdminOrders;
+
+
+

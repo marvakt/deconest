@@ -55,6 +55,15 @@
       "username": "Nis_had",
       "email": "nishad91@gmail.com",
       "password": "12345",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": "45b7",
+      "fullName": "rizal",
+      "username": "deco",
+      "email": "risal@gmail.com",
+      "password": "1risal@gmail.com",
       "role": "user"
     }
   ],
@@ -68,7 +77,7 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Handwoven natural fiber basket that adds rustic charm to your living room. Perfect for storage or as wall decor.",
       "isArchived": false,
-      "stock": "4"
+      "stock": "10"
     },
     {
       "id": "2",
@@ -366,44 +375,12 @@
       "userId": "a99a"
     },
     {
-      "id": "e50e",
-      "productId": "6",
-      "title": "LED Fairy Lights",
-      "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
-      "price": 799,
-      "userId": "9170"
-    },
-    {
-      "id": "16e9",
-      "productId": "7",
-      "title": "Decorative Tray",
-      "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
-      "price": 799,
-      "userId": "9170"
-    },
-    {
-      "id": "34fe",
+      "id": "5d42",
       "productId": "2",
       "title": "Pastel Vase Set",
       "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "price": 999,
-      "userId": "9170"
-    },
-    {
-      "id": "45cb",
-      "productId": "1",
-      "title": "Woven Basket",
-      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
-      "price": "800",
-      "userId": "9170"
-    },
-    {
-      "id": "20b9",
-      "productId": 1,
-      "title": "Textured Ceramic Vase",
-      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
-      "price": 25,
-      "userId": "9170"
+      "userId": "45b7"
     }
   ],
   "cart": [
@@ -435,13 +412,22 @@
       "userId": "1"
     },
     {
-      "id": "32b5",
-      "productId": 1,
-      "title": "Textured Ceramic Vase",
-      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
-      "price": 25,
+      "id": "7855",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "quantity": 6,
+      "userId": "45b7"
+    },
+    {
+      "id": "072e",
+      "productId": "5d42",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
       "quantity": 1,
-      "userId": "9170"
+      "userId": "45b7"
     }
   ],
   "orders": [
@@ -472,7 +458,7 @@
       "address": "jkkll",
       "paymentMethod": "cod",
       "date": "2025-07-19T05:01:56.984Z",
-      "status": "Delivered"
+      "status": "Shipped"
     },
     {
       "id": "bf65",
@@ -530,7 +516,7 @@
       "address": "ghjj",
       "paymentMethod": "cod",
       "date": "2025-07-19T09:04:48.407Z",
-      "status": "Delivered"
+      "status": "Shipped"
     },
     {
       "id": "1713",
@@ -597,43 +583,6 @@
       "address": "  b  bgvg",
       "paymentMethod": "cod",
       "date": "2025-07-20T13:21:49.506Z"
-    },
-    {
-      "id": "86de",
-      "user": "deco@gmail.com",
-      "items": [
-        {
-          "id": "0f75",
-          "productId": "20",
-          "title": "Rattan Wall Mirror",
-          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
-          "price": 40,
-          "quantity": 1,
-          "userId": "9170"
-        },
-        {
-          "id": "2d00",
-          "productId": 2,
-          "title": "Rattan Wall Mirror",
-          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
-          "price": 40,
-          "quantity": 1,
-          "userId": "9170"
-        },
-        {
-          "id": "e1db",
-          "productId": "2",
-          "title": "Pastel Vase Set",
-          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-          "price": 999,
-          "quantity": 1,
-          "userId": "9170"
-        }
-      ],
-      "total": 1079,
-      "address": "gghj",
-      "paymentMethod": "cod",
-      "date": "2025-07-21T01:21:07.008Z"
     },
     {
       "id": "804d",
@@ -709,34 +658,6 @@
       "address": "fhjk",
       "paymentMethod": "cod",
       "date": "2025-07-21T05:29:28.143Z"
-    },
-    {
-      "id": "6e29",
-      "user": "deco@gmail.com",
-      "items": [
-        {
-          "id": "54b6",
-          "productId": "3",
-          "title": "Linen Bed Throw",
-          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
-          "price": 1199,
-          "quantity": 1,
-          "userId": "9170"
-        },
-        {
-          "id": "65fa",
-          "productId": "1",
-          "title": "Woven Basket",
-          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
-          "price": 799,
-          "quantity": 1,
-          "userId": "9170"
-        }
-      ],
-      "total": 1998,
-      "address": "nmnm",
-      "paymentMethod": "cod",
-      "date": "2025-07-21T06:04:06.073Z"
     },
     {
       "id": "27ee",
@@ -933,6 +854,302 @@
       "address": "abc house",
       "paymentMethod": "cod",
       "date": "2025-07-22T11:21:35.332Z"
+    },
+    {
+      "id": "d1dc",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "32b5",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "dd4e",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1224,
+      "address": "padikkal",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T03:58:33.224Z"
+    },
+    {
+      "id": "11fa",
+      "user": "abc@gmail.com",
+      "items": [
+        {
+          "id": "acd8",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "0b9c"
+        }
+      ],
+      "total": 1199,
+      "address": "abc@gmail.com",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T06:19:10.077Z",
+      "status": "Delivered"
+    },
+    {
+      "id": "73b4",
+      "user": "abc@gmail.com",
+      "items": [
+        {
+          "id": "96bf",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "0b9c"
+        }
+      ],
+      "total": 999,
+      "address": "abc@gmail.com",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T06:31:53.285Z"
+    },
+    {
+      "id": "54d3",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "86cc",
+          "productId": "16",
+          "title": "Ardel Solid Wood Bookshelf",
+          "image": "https://i.pinimg.com/736x/c1/59/3f/c1593f42fee5887c2ccbce56c425a647.jpg",
+          "price": 799,
+          "quantity": 4,
+          "userId": "9170"
+        },
+        {
+          "id": "c8fc",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 11,
+          "userId": "9170"
+        },
+        {
+          "id": "0196",
+          "productId": "34fe",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 2,
+          "userId": "9170"
+        },
+        {
+          "id": "9f77",
+          "productId": "20b9",
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 2,
+          "userId": "9170"
+        },
+        {
+          "id": "392b",
+          "productId": "f697",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 5,
+          "userId": "9170"
+        }
+      ],
+      "total": 18044,
+      "address": "dfadf",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T10:28:25.056Z"
+    },
+    {
+      "id": "83b8",
+      "user": "risal@gmail.com",
+      "items": [
+        {
+          "id": "7feb",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 4,
+          "userId": "45b7"
+        },
+        {
+          "id": "7612",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "45b7"
+        },
+        {
+          "id": "f4b0",
+          "productId": 3,
+          "title": "Linen Throw Pillows",
+          "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+          "price": 55,
+          "quantity": 5,
+          "userId": "45b7"
+        },
+        {
+          "id": "e79e",
+          "productId": "6",
+          "title": "LED Fairy Lights",
+          "image": "https://i.pinimg.com/1200x/ec/52/ea/ec52ea7fbba3c3f295c7bc460d0957d8.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "45b7"
+        },
+        {
+          "id": "3b99",
+          "productId": "49ac",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 2,
+          "userId": "45b7"
+        },
+        {
+          "id": "59a3",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 2,
+          "userId": "45b7"
+        },
+        {
+          "id": "c7dc",
+          "productId": "6ba6",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 2,
+          "userId": "45b7"
+        }
+      ],
+      "total": 7210,
+      "address": "sscSCcCccDCVZFB",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T10:46:19.140Z"
+    },
+    {
+      "id": "9587",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "49e1",
+          "productId": "f697",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "ef49",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 5,
+          "userId": "9170"
+        },
+        {
+          "id": "dac4",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 5,
+          "userId": "9170"
+        },
+        {
+          "id": "a382",
+          "productId": "1",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 2,
+          "userId": "9170"
+        },
+        {
+          "id": "ae69",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 2,
+          "userId": "9170"
+        },
+        {
+          "id": "d8fa",
+          "productId": 3,
+          "title": "Linen Throw Pillows",
+          "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+          "price": 55,
+          "quantity": 5,
+          "userId": "9170"
+        },
+        {
+          "id": "c972",
+          "productId": "10",
+          "title": "Ceramic Utensil Holder",
+          "image": "https://i.pinimg.com/1200x/7a/88/77/7a887727c68490480a5aef9843375395.jpg",
+          "price": 799,
+          "quantity": 5,
+          "userId": "9170"
+        }
+      ],
+      "total": 11870,
+      "address": "dcgfv",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T11:56:14.815Z"
+    },
+    {
+      "id": "cbf8",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "e755",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "860c",
+          "productId": "5e94",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 2198,
+      "address": "hk;.b",
+      "paymentMethod": "cod",
+      "date": "2025-07-23T12:22:34.730Z"
     }
   ]
 }

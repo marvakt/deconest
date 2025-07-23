@@ -21,7 +21,7 @@ const Cart = () => {
   }, [cart]);
 
   useEffect(() => {
-    // Trigger animation after component mounts
+
     setTimeout(() => setIsLoaded(true), 100);
   }, []);
 
@@ -34,7 +34,7 @@ const Cart = () => {
       <Navbar />
 
       <div className="px-6 py-16">
-        {/* Header Section */}
+       
         <div className={`text-center mb-16 transition-all duration-1000 ease-out transform ${
           isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
@@ -75,7 +75,7 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            {/* Cart Items */}
+          
             <div className="max-w-6xl mx-auto space-y-6 mb-12">
               {cart.map((item, index) => (
                 <div

@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     axios.get("http://localhost:3000/orders").then(res => setOrders(res.data));
   }, []);
 
-  // FIX: Make sure amount is a valid number
+ 
   const totalRevenue = orders.reduce((sum, o) => {
     const amount = parseFloat(o.total || 0);
     return sum + (isNaN(amount) ? 0 : amount);

@@ -66,3 +66,8 @@ export const WishlistProvider = ({ children }) => {
     </WishlistContext.Provider>
   );
 };
+
+
+
+
+

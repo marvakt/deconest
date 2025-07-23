@@ -1,10 +1,279 @@
 
 
+// import React from "react";
+// import { useWishlist } from "../context/WishlistContext";
+// import { useCart } from "../context/CartContext";
+// import Navbar from "../components/Navbar";
+// import { toast } from "react-toastify";
+// import { FaHeart } from "react-icons/fa";
+
+// const Wishlist = () => {
+//   const { wishlist, removeFromWishlist } = useWishlist();
+//   const { addToCart } = useCart();
+
+//   const handleAddToCart = async (item) => {
+//     await addToCart(item);
+//     toast.success("Item added to cart!");
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
+//         {/* Subtle background elements */}
+//         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+//           <div className="absolute top-32 left-1/4 w-64 h-64 bg-gray-100/30 rounded-full blur-3xl animate-float"></div>
+//           <div className="absolute bottom-20 right-1/3 w-48 h-48 bg-black/5 rounded-full blur-2xl animate-float-delayed"></div>
+//         </div>
+
+//         <div className="relative max-w-6xl mx-auto px-4 py-8">
+//           {/* Compact Header */}
+//           <div className="text-center mb-12">
+//             <h1 className="text-3xl font-semibold mb-8 flex items-center justify-center gap-3 text-black">
+//               <FaHeart className="text-black animate-pulse" />
+//               <span className="relative">
+//                 Your Wishlist
+//                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300"></span>
+//               </span>
+//             </h1>
+//           </div>
+
+//           {wishlist.length === 0 ? (
+//             <div className="text-center py-16">
+//               <div className="inline-block p-6 mb-4 rounded-full bg-gray-50">
+//                 <svg
+//                   className="w-16 h-16 text-gray-400"
+//                   fill="none"
+//                   stroke="currentColor"
+//                   viewBox="0 0 24 24"
+//                 >
+//                   <path
+//                     strokeLinecap="round"
+//                     strokeLinejoin="round"
+//                     strokeWidth="1.5"
+//                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+//                   ></path>
+//                 </svg>
+//               </div>
+//               <h3 className="text-xl font-medium text-black mb-2">
+//                 Your wishlist is empty
+//               </h3>
+//               <p className="text-gray-500 max-w-md mx-auto">
+//                 Save your favorite DecoNest items here for later
+//               </p>
+//             </div>
+//           ) : (
+//             <>
+//               {/* Collection Counter - simplified */}
+//               <div className="text-center mb-8">
+//                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 font-medium shadow-sm">
+//                   <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+//                   {wishlist.length} {wishlist.length === 1 ? 'Item' : 'Items'} in Wishlist
+//                 </span>
+//               </div>
+
+//               {/* Compact Grid matching product page layout */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+//                 {wishlist.map((item, index) => (
+//                   <div
+//                     key={item.id}
+//                     className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 ease-out border border-gray-200/60 hover:border-black/20 animate-slideInUp transform hover:-translate-y-1"
+//                     style={{ 
+//                       animationDelay: `${index * 0.1}s`,
+//                     }}
+//                   >
+//                     {/* Image Container - compact size like product page */}
+//                     <div className="relative overflow-hidden bg-gray-50">
+//                       <div className="aspect-[4/3] overflow-hidden">
+//                         <img
+//                           src={item.image}
+//                           alt={item.title}
+//                           className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-105"
+//                         />
+//                       </div>
+                      
+//                       {/* Heart button in top right corner - matching product page */}
+//                       <button
+//                         onClick={() => removeFromWishlist(item.id)}
+//                         className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
+//                         aria-label="Remove from wishlist"
+//                       >
+//                         <FaHeart className="h-4 w-4 text-red-500" />
+//                       </button>
+//                     </div>
+
+//                     {/* Compact Content matching product page */}
+//                     <div className="p-4 space-y-3">
+//                       <h2 className="text-lg font-medium text-black line-clamp-1 group-hover:text-gray-800 transition-colors duration-300">
+//                         {item.title}
+//                       </h2>
+                      
+//                       <div className="flex items-center justify-between">
+//                         <span className="text-lg font-semibold text-black">
+//                           ₹{item.price}
+//                         </span>
+//                       </div>
+
+//                       {/* Compact CTA Button matching product page style */}
+//                       <button
+//                         onClick={() => handleAddToCart(item)}
+//                         className="w-full py-3 px-4 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium shadow-sm hover:shadow-md transform hover:scale-[1.01] active:scale-[0.99] group/button"
+//                       >
+//                         <svg
+//                           xmlns="http://www.w3.org/2000/svg"
+//                           className="h-4 w-4 transition-transform duration-300 group-hover/button:scale-110"
+//                           viewBox="0 0 20 20"
+//                           fill="currentColor"
+//                         >
+//                           <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+//                         </svg>
+//                         <span>Add to Cart</span>
+//                       </button>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             </>
+//           )}
+//         </div>
+//       </div>
+
+//       {/* Enhanced Animations */}
+//       <style>{`
+//         @keyframes slideInUp {
+//           from {
+//             opacity: 0;
+//             transform: translateY(40px) scale(0.95);
+//           }
+//           to {
+//             opacity: 1;
+//             transform: translateY(0) scale(1);
+//           }
+//         }
+
+//         @keyframes float {
+//           0%, 100% {
+//             transform: translate(0, 0) rotate(0deg);
+//           }
+//           33% {
+//             transform: translate(20px, -20px) rotate(1deg);
+//           }
+//           66% {
+//             transform: translate(-20px, 10px) rotate(-1deg);
+//           }
+//         }
+
+//         @keyframes heartbeat-gentle {
+//           0%, 100% {
+//             transform: scale(1);
+//           }
+//           50% {
+//             transform: scale(1.03);
+//           }
+//         }
+
+//         @keyframes pulse-soft {
+//           0%, 100% {
+//             opacity: 0.3;
+//           }
+//           50% {
+//             opacity: 0.6;
+//           }
+//         }
+
+//         @keyframes pulse-gentle {
+//           0%, 100% {
+//             opacity: 1;
+//             transform: scale(1);
+//           }
+//           50% {
+//             opacity: 0.8;
+//             transform: scale(1.05);
+//           }
+//         }
+
+//         .animate-slideInUp {
+//           animation: slideInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+//           opacity: 0;
+//         }
+
+//         .animate-float {
+//           animation: float 8s ease-in-out infinite;
+//         }
+
+//         .animate-float-delayed {
+//           animation: float 8s ease-in-out infinite;
+//           animation-delay: 4s;
+//         }
+
+//         .animate-heartbeat-gentle {
+//           animation: heartbeat-gentle 3s ease-in-out infinite;
+//         }
+
+//         .animate-pulse-soft {
+//           animation: pulse-soft 3s ease-in-out infinite;
+//         }
+
+//         .animate-pulse-gentle {
+//           animation: pulse-gentle 2s ease-in-out infinite;
+//         }
+
+//         /* Smooth scrollbar */
+//         ::-webkit-scrollbar {
+//           width: 6px;
+//         }
+
+//         ::-webkit-scrollbar-track {
+//           background: transparent;
+//         }
+
+//         ::-webkit-scrollbar-thumb {
+//           background: rgba(0, 0, 0, 0.2);
+//           border-radius: 3px;
+//         }
+
+//         ::-webkit-scrollbar-thumb:hover {
+//           background: rgba(0, 0, 0, 0.4);
+//         }
+
+//         /* Enhanced backdrop blur */
+//         .backdrop-blur-sm {
+//           backdrop-filter: blur(8px);
+//         }
+
+//         /* Smooth easing for all transitions */
+//         * {
+//           transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+//         }
+
+//         /* Line clamp utility */
+//         .line-clamp-1 {
+//           overflow: hidden;
+//           display: -webkit-box;
+//           -webkit-line-clamp: 1;
+//           -webkit-box-orient: vertical;
+//         }
+
+//         .line-clamp-2 {
+//           overflow: hidden;
+//           display: -webkit-box;
+//           -webkit-line-clamp: 2;
+//           -webkit-box-orient: vertical;
+//         }
+//       `}</style>
+//     </>
+//   );
+// };
+
+// export default Wishlist;
+
+
+
+
 import React from "react";
 import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
-import { toast } from "react-toastify";
 import { FaHeart } from "react-icons/fa";
 
 const Wishlist = () => {
@@ -12,22 +281,20 @@ const Wishlist = () => {
   const { addToCart } = useCart();
 
   const handleAddToCart = async (item) => {
-    await addToCart(item);
-    toast.success("Item added to cart!");
+    await addToCart(item); 
+    removeFromWishlist(item.id); 
   };
 
   return (
     <>
       <Navbar />
       <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
-        {/* Subtle background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-32 left-1/4 w-64 h-64 bg-gray-100/30 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-1/3 w-48 h-48 bg-black/5 rounded-full blur-2xl animate-float-delayed"></div>
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 py-8">
-          {/* Compact Header */}
           <div className="text-center mb-12">
             <h1 className="text-3xl font-semibold mb-8 flex items-center justify-center gap-3 text-black">
               <FaHeart className="text-black animate-pulse" />
@@ -64,7 +331,6 @@ const Wishlist = () => {
             </div>
           ) : (
             <>
-              {/* Collection Counter - simplified */}
               <div className="text-center mb-8">
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 font-medium shadow-sm">
                   <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
@@ -72,17 +338,15 @@ const Wishlist = () => {
                 </span>
               </div>
 
-              {/* Compact Grid matching product page layout */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {wishlist.map((item, index) => (
                   <div
                     key={item.id}
                     className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 ease-out border border-gray-200/60 hover:border-black/20 animate-slideInUp transform hover:-translate-y-1"
-                    style={{ 
+                    style={{
                       animationDelay: `${index * 0.1}s`,
                     }}
                   >
-                    {/* Image Container - compact size like product page */}
                     <div className="relative overflow-hidden bg-gray-50">
                       <div className="aspect-[4/3] overflow-hidden">
                         <img
@@ -91,8 +355,7 @@ const Wishlist = () => {
                           className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-105"
                         />
                       </div>
-                      
-                      {/* Heart button in top right corner - matching product page */}
+
                       <button
                         onClick={() => removeFromWishlist(item.id)}
                         className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
@@ -102,19 +365,17 @@ const Wishlist = () => {
                       </button>
                     </div>
 
-                    {/* Compact Content matching product page */}
                     <div className="p-4 space-y-3">
                       <h2 className="text-lg font-medium text-black line-clamp-1 group-hover:text-gray-800 transition-colors duration-300">
                         {item.title}
                       </h2>
-                      
+
                       <div className="flex items-center justify-between">
                         <span className="text-lg font-semibold text-black">
                           ₹{item.price}
                         </span>
                       </div>
 
-                      {/* Compact CTA Button matching product page style */}
                       <button
                         onClick={() => handleAddToCart(item)}
                         className="w-full py-3 px-4 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium shadow-sm hover:shadow-md transform hover:scale-[1.01] active:scale-[0.99] group/button"
@@ -138,7 +399,7 @@ const Wishlist = () => {
         </div>
       </div>
 
-      {/* Enhanced Animations */}
+      {/* Animations + Styles */}
       <style>{`
         @keyframes slideInUp {
           from {
@@ -163,35 +424,6 @@ const Wishlist = () => {
           }
         }
 
-        @keyframes heartbeat-gentle {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.03);
-          }
-        }
-
-        @keyframes pulse-soft {
-          0%, 100% {
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.6;
-          }
-        }
-
-        @keyframes pulse-gentle {
-          0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-          }
-        }
-
         .animate-slideInUp {
           animation: slideInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
           opacity: 0;
@@ -206,19 +438,6 @@ const Wishlist = () => {
           animation-delay: 4s;
         }
 
-        .animate-heartbeat-gentle {
-          animation: heartbeat-gentle 3s ease-in-out infinite;
-        }
-
-        .animate-pulse-soft {
-          animation: pulse-soft 3s ease-in-out infinite;
-        }
-
-        .animate-pulse-gentle {
-          animation: pulse-gentle 2s ease-in-out infinite;
-        }
-
-        /* Smooth scrollbar */
         ::-webkit-scrollbar {
           width: 6px;
         }
@@ -236,17 +455,14 @@ const Wishlist = () => {
           background: rgba(0, 0, 0, 0.4);
         }
 
-        /* Enhanced backdrop blur */
         .backdrop-blur-sm {
           backdrop-filter: blur(8px);
         }
 
-        /* Smooth easing for all transitions */
         * {
           transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        /* Line clamp utility */
         .line-clamp-1 {
           overflow: hidden;
           display: -webkit-box;

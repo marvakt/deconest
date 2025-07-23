@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Navbar from "../components/Navbar";
 
 const Profile = () => {
   const { user, logout, login } = useAuth(); // ✅ added login for refresh fix
@@ -52,7 +53,10 @@ const Profile = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-neutral-50 to-stone-100 flex items-center justify-center p-6">
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-32 h-32 bg-stone-200/30 rounded-full blur-3xl animate-pulse"></div>
@@ -170,7 +174,9 @@ const Profile = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
+
 
 export default Profile;

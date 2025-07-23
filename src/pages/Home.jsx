@@ -86,6 +86,7 @@ const Home = () => {
 
   return (
     <>
+     <Navbar />
       <style>
         {`
           @keyframes float {
@@ -165,7 +166,7 @@ const Home = () => {
       </style>
       
       <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden relative">
-        <Navbar />
+       
 
         {/* Floating Background Elements */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -451,6 +452,7 @@ const Home = () => {
         {/* Footer Spacer with Gradient */}
         <div className="h-24 bg-gradient-to-t from-gray-200/50 to-white"></div>
       </div>
+      
     </>
   );
 };
