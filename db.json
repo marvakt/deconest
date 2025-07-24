@@ -2,6 +2,7 @@
   "users": [
     {
       "id": "1",
+      "fullName": "deconest",
       "email": "admin@gmail.com",
       "password": "admin123",
       "role": "admin",
@@ -9,10 +10,11 @@
     },
     {
       "id": "2",
+      "fullName": "deconest",
       "email": "user@example.com",
       "password": "user123",
       "role": "user",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "9170",
@@ -113,7 +115,7 @@
       "createdAt": "2025-07-13T12:00:00Z",
       "description": "Soft, breathable linen bed throw in a neutral tone. Adds cozy texture and elegance to any bedding setup.",
       "isArchived": false,
-      "stock": "4"
+      "stock": "10"
     },
     {
       "id": "4",
@@ -200,7 +202,8 @@
       "image": "https://i.pinimg.com/1200x/3b/49/06/3b49062243ed4a3434a7881896668ebe.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Stylish ceramic utensil holder with a matte finish. Keeps your tools handy and kitchen clutter-free.",
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "12",
@@ -211,7 +214,8 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Set of 3 airtight glass jars with wooden lids. Perfect for storing dry goods while looking beautiful on open shelves.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "13",
@@ -270,7 +274,8 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Durable and minimalist single bed made from premium wood. Ideal for guest rooms or cozy personal spaces.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "18",
@@ -281,7 +286,8 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Large framed mirror with rustic wooden finish. Perfect for makeup, styling, or hallway wall decor.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "19",
@@ -291,7 +297,8 @@
       "description": "A handcrafted ceramic vase with textured finish.",
       "room": "Living Room",
       "trending": true,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "20",
@@ -301,7 +308,8 @@
       "description": "Round mirror with rattan frame for a boho touch.",
       "room": "Bedroom",
       "trending": true,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "21",
@@ -311,7 +319,8 @@
       "description": "Set of 2 soft linen pillows in pastel tones.",
       "room": "Living Room",
       "trending": true,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "10"
     },
     {
       "id": "a614",
@@ -332,7 +341,8 @@
       "price": "2000",
       "room": "Living Room",
       "style": "Rustic",
-      "description": "Nature-inspired wooden shelf with a tree branch design — perfect for books and decor"
+      "description": "Nature-inspired wooden shelf with a tree branch design — perfect for books and decor",
+      "stock": "10"
     },
     {
       "id": "a0e3",
@@ -394,11 +404,19 @@
       "userId": "7c08"
     },
     {
-      "id": "fd4a",
+      "id": "0924",
       "productId": "2",
       "title": "Pastel Vase Set",
       "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "price": 999,
+      "userId": "9170"
+    },
+    {
+      "id": "27d1",
+      "productId": 1,
+      "title": "Textured Ceramic Vase",
+      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+      "price": 25,
       "userId": "9170"
     }
   ],
@@ -468,44 +486,6 @@
     }
   ],
   "orders": [
-    {
-      "id": "79d1",
-      "user": "deco@gmail.com",
-      "items": [
-        {
-          "id": "20f6",
-          "productId": "18cd",
-          "title": "Pastel Vase Set",
-          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-          "price": 999,
-          "quantity": 1,
-          "userId": "9170"
-        },
-        {
-          "id": "9a4e",
-          "productId": "2",
-          "title": "Pastel Vase Set",
-          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
-          "price": 999,
-          "quantity": 1,
-          "userId": "9170"
-        },
-        {
-          "id": "f7ad",
-          "productId": "da24",
-          "title": "Woven Basket",
-          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
-          "price": 800,
-          "quantity": 1,
-          "userId": "9170"
-        }
-      ],
-      "total": 2798,
-      "address": "padikkal",
-      "paymentMethod": "cod",
-      "date": "2025-07-23T14:24:48.835Z",
-      "status": "Pending"
-    },
     {
       "id": "7ce0",
       "user": "deco@gmail.com",
@@ -620,6 +600,136 @@
       "address": "hjk",
       "paymentMethod": "cod",
       "date": "2025-07-24T07:09:42.535Z"
+    },
+    {
+      "id": "0920",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "9f8d",
+          "productId": 3,
+          "title": "Linen Throw Pillows",
+          "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+          "price": 55,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "3419",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 3,
+          "userId": "9170"
+        }
+      ],
+      "total": 3052,
+      "address": "dfhj",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T11:42:16.774Z"
+    },
+    {
+      "id": "e4dd",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "6622",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "b0be",
+          "productId": "4",
+          "title": "Bed Canopy Net",
+          "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "2fbc",
+          "productId": "6109",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 2238,
+      "address": "fvhj",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T11:49:35.791Z"
+    },
+    {
+      "id": "a1a6",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "0797",
+          "productId": 3,
+          "title": "Linen Throw Pillows",
+          "image": "https://i.pinimg.com/736x/bd/76/74/bd7674f2252526a09f99989ec9a29761.jpg",
+          "price": 55,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "9433",
+          "productId": "4",
+          "title": "Bed Canopy Net",
+          "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1254,
+      "address": "xcvb",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T11:54:32.465Z"
+    },
+    {
+      "id": "d8cd",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "b4d4",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "b89b",
+          "productId": "4",
+          "title": "Bed Canopy Net",
+          "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "ffa9",
+          "productId": "0d8d",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 2438,
+      "address": "cvnm",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T11:56:07.900Z"
     }
   ]
 }

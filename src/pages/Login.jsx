@@ -1,10 +1,11 @@
 
 
 
+
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-hot-toast"; // ✅ replaced toastify with hot-toast
+import { toast } from "react-hot-toast"; 
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
@@ -53,15 +54,15 @@ const Login = () => {
         return;
       }
 
-      if (user.blocked) {
+      // ✅ Check if the user is blocked
+      if (user.isBlocked) {
         toast.error("You are blocked by admin");
         return;
       }
 
-      // Set user in context + localStorage
+      // ✅ Successful login
       login(user);
 
-      // Delay navigation to allow context to sync
       setTimeout(() => {
         if (user.role === "admin") {
           toast.success("Welcome Admin!");

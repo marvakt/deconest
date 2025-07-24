@@ -10,7 +10,6 @@ import {
 import {
   Users, ShoppingCart, PackageCheck, PackageX, Truck, Ban
 } from "lucide-react";
-import AdminLayout from "./AdminLayout";
 
 const COLORS = ["#facc15", "#60a5fa", "#34d399", "#f87171"]; 
 
