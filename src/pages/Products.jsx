@@ -13,23 +13,23 @@ const Products = () => {
   const [roomFilter, setRoomFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(12);
-  const [isLoading, setIsLoading] = useState(true); // New loading state
+  const [isLoading, setIsLoading] = useState(true); 
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const roomFromURL = queryParams.get("room");
 
   useEffect(() => {
-    setIsLoading(true); // Set loading to true when starting fetch
+    setIsLoading(true); 
     axios
       .get("http://localhost:3000/products")
       .then((res) => {
         setProducts(res.data);
-        setIsLoading(false); // Set loading to false when data arrives
+        setIsLoading(false); 
       })
       .catch((err) => {
         console.error("Error fetching products:", err);
-        setIsLoading(false); // Set loading to false even on error
+        setIsLoading(false); 
       });
   }, []);
 
@@ -149,10 +149,9 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Product Grid */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         {isLoading ? (
-          // Loading state
+          
           <div className="flex justify-center items-center py-24">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-900 rounded-full animate-spin mb-4"></div>

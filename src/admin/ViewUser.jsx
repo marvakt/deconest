@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ViewUser = () => {
-  const { id } = useParams(); // gets user ID from URL
+  const { id } = useParams(); 
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Fetch user data by ID from JSON server
+
     axios.get(`http://localhost:3000/users/${id}`)
       .then((res) => setUser(res.data))
       .catch((err) => console.error('Error fetching user:', err));

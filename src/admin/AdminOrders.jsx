@@ -5,7 +5,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { toast } from 'react-hot-toast'; // ✅ Changed from react-toastify to react-hot-toast
+import { toast } from 'react-hot-toast'; 
 import { FaEye, FaTrash } from 'react-icons/fa';
 
 const AdminOrders = () => {
@@ -52,7 +52,7 @@ const AdminOrders = () => {
     }
   };
 
-  // Pagination logic
+ 
   const indexOfLastOrder = currentPage * ordersPerPage;
   const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
   const currentOrders = orders.slice(indexOfFirstOrder, indexOfLastOrder);
@@ -161,7 +161,7 @@ const AdminOrders = () => {
         </table>
       </div>
 
-      {/* Pagination Controls */}
+     
       {orders.length > ordersPerPage && (
         <div className="flex justify-center mt-6 gap-2 flex-wrap">
           <button

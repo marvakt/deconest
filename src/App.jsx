@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast'; // ✅ new hot-toast import
+import { Toaster } from 'react-hot-toast'; 
 
 // User Pages
 import SignUp from './pages/Signup';
@@ -37,6 +37,7 @@ import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 // Context
 import { useAuth } from './context/AuthContext';
 
+
 function App() {
   const location = useLocation();
   const { user } = useAuth();
@@ -63,7 +64,7 @@ function App() {
         <Route path="/productDetails/:id" element={<ProductDetails />} />
         <Route path="/order-summary" element={<OrderSummary />} />
 
-        {/* ---------- Protected User Routes ---------- */}
+        {/* * ---------- Protected User Routes ----------  */}
         <Route
           path="/cart"
           element={isLoggedIn ? <Cart /> : <Navigate to="/login" replace />}
@@ -102,16 +103,16 @@ function App() {
           <Route path="manage-users" element={<ManageUsers />} />
           <Route path="view-user/:id" element={<ViewUser />} />
           <Route path="orders" element={<AdminOrders />} />
+        
         </Route>
 
-        {/* ---------- Fallback Route ---------- */}
+      
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
-      {/* ✅ Hide Footer on Admin Pages */}
+      
       {!isAdminRoute && <Footer />}
 
-      {/* ✅ Replaced react-toastify with react-hot-toast */}
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );

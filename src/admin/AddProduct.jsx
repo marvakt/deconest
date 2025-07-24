@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-hot-toast'; // ✅ updated
+import { toast } from 'react-hot-toast'; 
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -25,10 +25,10 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3000/products', formData);
-      toast.success('Product added successfully!'); // ✅ hot-toast
+      toast.success('Product added successfully!'); 
       navigate('/admin/manage-products');
     } catch (error) {
-      toast.error('Failed to add product'); // ✅ hot-toast
+      toast.error('Failed to add product'); 
     }
   };
 

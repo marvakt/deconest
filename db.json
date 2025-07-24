@@ -46,7 +46,7 @@
       "fullName": "marva",
       "username": "marvakt",
       "email": "marvakt@gmail.com",
-      "password": "marvakt@gmail.com",
+      "password": "marvakt@gmail.com1",
       "role": "user"
     },
     {
@@ -137,7 +137,7 @@
     {
       "id": "7",
       "title": "Decorative Tray",
-      "price": 799,
+      "price": "300",
       "room": "Kitchen",
       "image": "https://i.pinimg.com/736x/31/fd/12/31fd12054852fe43b3086b8d77d4dfb8.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
@@ -148,7 +148,7 @@
     {
       "id": "8",
       "title": "Framed Quote Print",
-      "price": 799,
+      "price": "700",
       "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
@@ -202,24 +202,26 @@
     {
       "id": "13",
       "title": "Patterned Table Mats",
-      "price": 799,
+      "price": "299",
       "room": "Kitchen",
       "image": "https://i.pinimg.com/1200x/3c/bc/55/3cbc556b388b17ee570b5963f891acd1.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Set of 4 table mats with soft geometric prints. Adds charm and protects surfaces during everyday meals.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "7"
     },
     {
       "id": "14",
       "title": "Terracotta Decorative Vases (Set of 3)",
-      "price": 799,
+      "price": "499",
       "room": "Living Room",
       "image": "https://i.pinimg.com/1200x/78/b1/8d/78b18dd921d54d676fcf176698b7f25b.jpg",
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Earthy terracotta vases with rustic texture. A timeless set for shelves, tables, or corner styling.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "7"
     },
     {
       "id": "15",
@@ -230,7 +232,8 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Sleek and comfy lounge chair in Scandinavian style. Blends into minimal, modern, or boho interiors.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "7"
     },
     {
       "id": "16",
@@ -241,7 +244,8 @@
       "createdAt": "2025-07-14T10:00:00Z",
       "description": "Solid wood bookshelf with open compartments. Organize your books and decor in refined style.",
       "trending": false,
-      "isArchived": false
+      "isArchived": false,
+      "stock": "7"
     },
     {
       "id": "17",
@@ -315,6 +319,15 @@
       "room": "Living Room",
       "style": "Rustic",
       "description": "Nature-inspired wooden shelf with a tree branch design — perfect for books and decor"
+    },
+    {
+      "id": "a0e3",
+      "title": "TEST",
+      "image": "https://i.pinimg.com/1200x/b0/7f/4e/b07f4e22ed1ae3139b3ff1e168b64080.jpg",
+      "price": "300",
+      "room": "Living Room",
+      "description": "GV,LJFG5R",
+      "stock": "20"
     }
   ],
   "wishlist": [
@@ -404,33 +417,6 @@
       "price": 999,
       "quantity": 1,
       "userId": "45b7"
-    },
-    {
-      "id": "c71b",
-      "productId": 1,
-      "title": "Textured Ceramic Vase",
-      "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
-      "price": 25,
-      "quantity": 1,
-      "userId": "9170"
-    },
-    {
-      "id": "3526",
-      "productId": 2,
-      "title": "Rattan Wall Mirror",
-      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
-      "price": 40,
-      "quantity": 1,
-      "userId": "9170"
-    },
-    {
-      "id": "c383",
-      "productId": "0cce",
-      "title": "Rattan Wall Mirror",
-      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
-      "price": 40,
-      "quantity": 1,
-      "userId": "9170"
     }
   ],
   "orders": [
@@ -470,6 +456,64 @@
       "address": "padikkal",
       "paymentMethod": "cod",
       "date": "2025-07-23T14:24:48.835Z",
+      "status": "Cancelled"
+    },
+    {
+      "id": "7ce0",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "c71b",
+          "productId": 1,
+          "title": "Textured Ceramic Vase",
+          "image": "https://i.pinimg.com/1200x/13/30/bd/1330bdb20828ee93466a0a437cd2da30.jpg",
+          "price": 25,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "3526",
+          "productId": 2,
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        },
+        {
+          "id": "c383",
+          "productId": "0cce",
+          "title": "Rattan Wall Mirror",
+          "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+          "price": 40,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 105,
+      "address": "RGTHJ",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T00:53:53.119Z",
+      "status": "Delivered"
+    },
+    {
+      "id": "fd89",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "7642",
+          "productId": "11",
+          "title": "Ceramic Utensil Holder",
+          "image": "https://i.pinimg.com/1200x/3b/49/06/3b49062243ed4a3434a7881896668ebe.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 799,
+      "address": "BNM",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T00:54:17.267Z",
       "status": "Shipped"
     }
   ]

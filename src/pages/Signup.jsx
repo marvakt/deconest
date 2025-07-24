@@ -7,7 +7,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-hot-toast"; // ✅ added hot-toast
+import { toast } from "react-hot-toast"; 
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      toast.error("Passwords do not match"); // ✅ replaced alert
+      toast.error("Passwords do not match"); 
       return;
     }
 
@@ -51,17 +51,17 @@ const Signup = () => {
       );
 
       if (res.data.length > 0) {
-        toast.error("User already exists"); // ✅ replaced alert
+        toast.error("User already exists"); 
         return;
       }
 
       await axios.post("http://localhost:3000/users", newUser);
 
-      toast.success("Signup successful!"); // ✅ replaced alert
+      toast.success("Signup successful!"); 
       navigate("/login");
     } catch (error) {
       console.error("Signup Error:", error);
-      toast.error("Something went wrong during signup. Try again."); // ✅ replaced alert
+      toast.error("Something went wrong during signup. Try again."); 
     }
   };
 

@@ -55,7 +55,7 @@ const ManageUsers = () => {
             {users.map((user) => (
               <tr key={user.id} className="border-t hover:bg-pink-50 transition">
                 <td className="px-4 py-3">{user.id}</td>
-                <td className="px-4 py-3">{user.name}</td>
+                <td className="px-4 py-3">{user.fullName}</td>
                 <td className="px-4 py-3">{user.email}</td>
                 <td className="px-4 py-3 capitalize">{user.role}</td>
                 <td className="px-4 py-3">
@@ -66,14 +66,14 @@ const ManageUsers = () => {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-center space-x-2">
-                  {/* View Button */}
+                 
                   <Link to={`/admin/view-user/${user.id}`}>
                     <button className="bg-blue-200 hover:bg-blue-300 text-blue-800 text-xs font-medium px-3 py-1 rounded-xl transition">
                       View
                     </button>
                   </Link>
 
-                  {/* Block/Unblock Button */}
+               
                   <button
                     onClick={() => toggleBlock(user.id, user.isBlocked)}
                     className={`text-xs font-medium px-3 py-1 rounded-xl transition ${
@@ -85,7 +85,7 @@ const ManageUsers = () => {
                     {user.isBlocked ? 'Unblock' : 'Block'}
                   </button>
 
-                  {/* Delete Button */}
+                
                   <button
                     onClick={() => deleteUser(user.id)}
                     className="bg-gray-200 hover:bg-gray-300 text-gray-800 text-xs font-medium px-3 py-1 rounded-xl transition"

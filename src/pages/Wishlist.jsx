@@ -131,7 +131,7 @@ const Wishlist = () => {
         </div>
       </div>
 
-      {/* Animations + Styles */}
+    
       <style>{`
         @keyframes slideInUp {
           from {

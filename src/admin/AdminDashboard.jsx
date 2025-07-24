@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import AdminLayout from "./AdminLayout";
 
-const COLORS = ["#facc15", "#60a5fa", "#34d399", "#f87171"]; // yellow, blue, green, red
+const COLORS = ["#facc15", "#60a5fa", "#34d399", "#f87171"]; 
 
 const StatCard = ({ title, value, bg, icon: Icon }) => (
   <div className={`flex items-center justify-between p-4 rounded-lg shadow-md ${bg}`}>
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
     count: orders.filter(o => o.status === status).length,
   }));
 
-  // FIX: Handle missing or invalid date
+
   const monthlyRevenue = Array(12).fill(0);
   orders.forEach(order => {
     const date = new Date(order.date);
@@ -71,7 +71,6 @@ const AdminDashboard = () => {
     <div className="p-6 bg-gradient-to-br from-white to-pink-50 min-h-screen">
       <h2 className="text-3xl font-bold text-pink-700 mb-6 ">Welcome, Admin</h2>
 
-      {/* Stat Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
         <StatCard title="Total Users" value={users.length} icon={Users} bg="bg-blue-100" />
         <StatCard title="Blocked Users" value={blockedUsers} icon={Ban} bg="bg-red-100" />
@@ -83,14 +82,12 @@ const AdminDashboard = () => {
         <StatCard title="Cancelled Orders" value={statusCounts[3]?.count} icon={PackageX} bg="bg-red-100" />
       </div>
 
-      {/* Total Revenue */}
       <div className="bg-pink-100 text-right rounded-xl shadow-md p-4 text-lg font-semibold text-pink-800 mb-6">
         💰 Total Revenue: ₹{totalRevenue.toLocaleString()}
       </div>
 
-      {/* Charts Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Pie Chart */}
+      
         <div className="bg-white p-4 rounded-xl shadow-md">
           <h3 className="text-lg font-semibold mb-4 text-pink-600">📊 Order Status Overview</h3>
           <ResponsiveContainer width="100%" height={300}>
@@ -112,7 +109,7 @@ const AdminDashboard = () => {
           </ResponsiveContainer>
         </div>
 
-        {/* Bar Chart */}
+     
         <div className="bg-white p-4 rounded-xl shadow-md">
           <h3 className="text-lg font-semibold mb-4 text-pink-600">📈 Monthly Revenue</h3>
           <ResponsiveContainer width="100%" height={300}>

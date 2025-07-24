@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast'; // ✅ hot-toast used
+import toast from 'react-hot-toast'; 
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -23,7 +23,7 @@ const ManageProducts = () => {
       const res = await axios.get('http://localhost:3000/products');
       setProducts(res.data);
     } catch (error) {
-      toast.error("Failed to fetch products"); // ✅ updated
+      toast.error("Failed to fetch products"); 
     }
   };
 
@@ -31,10 +31,10 @@ const ManageProducts = () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
         await axios.delete(`http://localhost:3000/products/${id}`);
-        toast.success("Product deleted"); // ✅ updated
+        toast.success("Product deleted"); 
         fetchProducts();
       } catch (error) {
-        toast.error("Failed to delete"); // ✅ updated
+        toast.error("Failed to delete"); 
       }
     }
   };
@@ -58,7 +58,7 @@ const ManageProducts = () => {
     <div className="p-8 min-h-screen bg-gradient-to-br from-pink-50 via-white to-blue-50">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">🛒 Manage Products</h1>
 
-      {/* Search Bar */}
+      
       <div className="mb-6">
         <input
           type="text"
@@ -72,7 +72,7 @@ const ManageProducts = () => {
         />
       </div>
 
-      {/* Product Grid */}
+     
       {paginatedProducts.length === 0 ? (
         <p className="text-gray-500">No products found.</p>
       ) : (
