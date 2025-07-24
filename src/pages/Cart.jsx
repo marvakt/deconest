@@ -86,7 +86,7 @@ const Cart = () => {
                   style={{ transitionDelay: `${300 + index * 100}ms` }}
                 >
                   <div className="flex flex-col lg:flex-row items-center gap-8">
-                    {/* Product Image */}
+                    
                     <div className="relative group/image">
                       <img
                         src={item.image}
@@ -96,7 +96,7 @@ const Cart = () => {
                       <div className="absolute inset-0 bg-stone-900/0 group-hover/image:bg-stone-900/5 rounded-xl transition-colors duration-300"></div>
                     </div>
 
-                    {/* Product Details */}
+                    
                     <div className="flex-1 w-full space-y-4">
                       <div className="flex justify-between items-start">
                         <div>
@@ -106,7 +106,7 @@ const Cart = () => {
                           </p>
                         </div>
                         
-                        {/* Remove Button */}
+                        
                         <button
                           type="button"
                           onClick={() => removeFromCart(item.id)}
@@ -118,7 +118,7 @@ const Cart = () => {
                         </button>
                       </div>
 
-                      {/* Quantity Controls */}
+                     
                       <div className="flex items-center gap-6">
                         <span className="text-stone-600 font-light">Quantity:</span>
                         <div className="flex items-center bg-stone-50 rounded-full overflow-hidden shadow-inner">
@@ -143,7 +143,7 @@ const Cart = () => {
                           </button>
                         </div>
                         
-                        {/* Item Total */}
+                       
                         <div className="ml-auto">
                           <span className="text-lg font-medium text-stone-800">
                             ₹{(Number(item.price) * Number(item.quantity)).toLocaleString("en-IN")}
@@ -156,13 +156,13 @@ const Cart = () => {
               ))}
             </div>
 
-            {/* Cart Summary */}
+            
             <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-700 ease-out transform ${
               isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}>
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-stone-100">
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-                  {/* Total */}
+                  
                   <div className="space-y-2">
                     <h4 className="text-2xl font-light text-stone-800 tracking-wide">
                       Total: ₹{total.toLocaleString("en-IN", { minimumFractionDigits: 2 })}
@@ -170,7 +170,7 @@ const Cart = () => {
                     <p className="text-stone-500 font-light text-sm">Including all applicable taxes</p>
                   </div>
 
-                  {/* Checkout Button */}
+                  
                   <button
                     onClick={handleCheckout}
                     className="group relative inline-flex items-center gap-3 bg-stone-800 text-white px-12 py-4 rounded-full font-light tracking-wide hover:bg-stone-900 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
@@ -180,7 +180,7 @@ const Cart = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                     
-                    {/* Hover Effect Overlay */}
+                   
                     <div className="absolute inset-0 bg-gradient-to-r from-stone-700 to-stone-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </div>
@@ -189,7 +189,7 @@ const Cart = () => {
           </>
         )}
 
-        {/* Decorative Elements */}
+      
         <div className="fixed top-20 right-10 w-32 h-32 bg-gradient-to-br from-amber-100/30 to-stone-100/30 rounded-full blur-3xl -z-10"></div>
         <div className="fixed bottom-20 left-10 w-40 h-40 bg-gradient-to-tr from-stone-100/40 to-amber-50/40 rounded-full blur-3xl -z-10"></div>
       </div>

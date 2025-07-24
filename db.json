@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "email": "admin@deconest.com",
+      "email": "admin@gmail.com",
       "password": "admin123",
       "role": "admin",
       "isBlocked": false
@@ -64,6 +64,20 @@
       "username": "deco",
       "email": "risal@gmail.com",
       "password": "1risal@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "1c38",
+      "fullName": "abc",
+      "email": "abc@gmail.com",
+      "password": "abc@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "7c08",
+      "fullName": "shameela",
+      "email": "shameela@gmail.com",
+      "password": "shameela@gmail.com",
       "role": "user"
     }
   ],
@@ -370,6 +384,22 @@
       "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "price": 999,
       "userId": "45b7"
+    },
+    {
+      "id": "17fd",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "userId": "7c08"
+    },
+    {
+      "id": "fd4a",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "userId": "9170"
     }
   ],
   "cart": [
@@ -417,6 +447,24 @@
       "price": 999,
       "quantity": 1,
       "userId": "45b7"
+    },
+    {
+      "id": "1151",
+      "productId": "3",
+      "title": "Linen Bed Throw",
+      "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+      "price": 1199,
+      "quantity": 1,
+      "userId": "7c08"
+    },
+    {
+      "id": "70b7",
+      "productId": "4",
+      "title": "Bed Canopy Net",
+      "image": "https://i.pinimg.com/1200x/07/4f/66/074f66e490d6655ebc6c73f39a5b0b2f.jpg",
+      "price": 1199,
+      "quantity": 1,
+      "userId": "7c08"
     }
   ],
   "orders": [
@@ -456,7 +504,7 @@
       "address": "padikkal",
       "paymentMethod": "cod",
       "date": "2025-07-23T14:24:48.835Z",
-      "status": "Cancelled"
+      "status": "Pending"
     },
     {
       "id": "7ce0",
@@ -494,7 +542,7 @@
       "address": "RGTHJ",
       "paymentMethod": "cod",
       "date": "2025-07-24T00:53:53.119Z",
-      "status": "Delivered"
+      "status": "Pending"
     },
     {
       "id": "fd89",
@@ -515,6 +563,63 @@
       "paymentMethod": "cod",
       "date": "2025-07-24T00:54:17.267Z",
       "status": "Shipped"
+    },
+    {
+      "id": "5a45",
+      "user": "shameela@gmail.com",
+      "items": [
+        {
+          "id": "3456",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "7c08"
+        }
+      ],
+      "total": 1199,
+      "address": "shameelacfvgjn",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T05:05:18.388Z"
+    },
+    {
+      "id": "0aac",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "176c",
+          "productId": "11",
+          "title": "Ceramic Utensil Holder",
+          "image": "https://i.pinimg.com/1200x/3b/49/06/3b49062243ed4a3434a7881896668ebe.jpg",
+          "price": 799,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 799,
+      "address": "test",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T05:37:24.548Z"
+    },
+    {
+      "id": "8073",
+      "user": "deco@gmail.com",
+      "items": [
+        {
+          "id": "6e4b",
+          "productId": "3",
+          "title": "Linen Bed Throw",
+          "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+          "price": 1199,
+          "quantity": 1,
+          "userId": "9170"
+        }
+      ],
+      "total": 1199,
+      "address": "hjk",
+      "paymentMethod": "cod",
+      "date": "2025-07-24T07:09:42.535Z"
     }
   ]
 }

@@ -14,14 +14,14 @@ const Home = () => {
   const { addToCart } = useCart();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Hero slide images
+
   const heroImages = [
     "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3",
     "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3",
     "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3"
   ];
 
-  // Auto slide effect
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));

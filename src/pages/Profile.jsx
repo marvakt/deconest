@@ -248,7 +248,7 @@ const Profile = () => {
             <div className="space-y-4">
               <div className="group">
                 <label className="block text-stone-500 text-xs uppercase tracking-wider font-medium mb-1">Name</label>
-                <p className="text-stone-800 text-lg font-light group-hover:text-stone-900 transition-colors duration-300">{user.name}</p>
+                <p className="text-stone-800 text-lg font-light group-hover:text-stone-900 transition-colors duration-300">{user.fullName}</p>
               </div>
               <div className="w-full h-px bg-gradient-to-r from-transparent via-stone-200 to-transparent"></div>
               <div className="group">

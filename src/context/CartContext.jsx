@@ -114,7 +114,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from "react-hot-toast"; // ✅ replaced react-toastify
+import { toast } from "react-hot-toast"; 
 
 const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
