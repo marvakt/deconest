@@ -80,7 +80,8 @@
       "fullName": "shameela",
       "email": "shameela@gmail.com",
       "password": "shameela@gmail.com",
-      "role": "user"
+      "role": "user",
+      "isBlocked": true
     }
   ],
   "products": [
@@ -410,6 +411,30 @@
       "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
       "price": 999,
       "userId": "9170"
+    },
+    {
+      "id": "e8f6",
+      "productId": 2,
+      "title": "Rattan Wall Mirror",
+      "image": "https://i.pinimg.com/1200x/70/1d/7d/701d7d1a9305b00b7b43a65154b8aedb.jpg",
+      "price": 40,
+      "userId": "1c38"
+    },
+    {
+      "id": "4312",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "userId": "1c38"
+    },
+    {
+      "id": "995f",
+      "productId": "3",
+      "title": "Linen Bed Throw",
+      "image": "https://i.pinimg.com/1200x/e2/91/ff/e291ffa85b78bbaf0a220dcd3cb7722f.jpg",
+      "price": 1199,
+      "userId": "1c38"
     }
   ],
   "cart": [
@@ -475,6 +500,24 @@
       "price": 1199,
       "quantity": 1,
       "userId": "7c08"
+    },
+    {
+      "id": "21c0",
+      "productId": "1",
+      "title": "Woven Basket",
+      "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+      "price": 800,
+      "quantity": 1,
+      "userId": "1c38"
+    },
+    {
+      "id": "f510",
+      "productId": "2",
+      "title": "Pastel Vase Set",
+      "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+      "price": 999,
+      "quantity": 1,
+      "userId": "1c38"
     }
   ],
   "orders": [
@@ -553,7 +596,8 @@
       "total": 1199,
       "address": "shameelacfvgjn",
       "paymentMethod": "cod",
-      "date": "2025-07-24T05:05:18.388Z"
+      "date": "2025-07-24T05:05:18.388Z",
+      "status": "Shipped"
     },
     {
       "id": "0aac",
@@ -797,6 +841,72 @@
       "address": "vnmm",
       "paymentMethod": "cod",
       "date": "2025-07-31T11:04:14.580Z"
+    },
+    {
+      "id": "9a3d",
+      "user": "abc@gmail.com",
+      "items": [
+        {
+          "id": "4b73",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "1c38"
+        },
+        {
+          "id": "da56",
+          "productId": "bb76",
+          "title": "Woven Basket",
+          "image": "https://i.pinimg.com/736x/a7/d4/d0/a7d4d08b143d4c8083c14c40a23b03a9.jpg",
+          "price": 800,
+          "quantity": 1,
+          "userId": "1c38"
+        }
+      ],
+      "total": 1799,
+      "address": "test",
+      "paymentMethod": "cod",
+      "date": "2025-10-16T04:57:45.466Z"
+    },
+    {
+      "id": "515a",
+      "user": "abc@gmail.com",
+      "items": [
+        {
+          "id": "4956",
+          "productId": "8957",
+          "title": "Framed Quote Print",
+          "image": "https://i.pinimg.com/1200x/58/5c/a3/585ca39100b88ec0ac4a1816a0973042.jpg",
+          "price": 700,
+          "quantity": 1,
+          "userId": "1c38"
+        }
+      ],
+      "total": 700,
+      "address": "hjk",
+      "paymentMethod": "cod",
+      "date": "2025-10-16T17:14:26.102Z"
+    },
+    {
+      "id": "0af0",
+      "user": "abc@gmail.com",
+      "items": [
+        {
+          "id": "a3d5",
+          "productId": "2",
+          "title": "Pastel Vase Set",
+          "image": "https://i.pinimg.com/1200x/90/d8/b0/90d8b0fa64f4a2ee7e10351319ab734f.jpg",
+          "price": 999,
+          "quantity": 1,
+          "userId": "1c38"
+        }
+      ],
+      "total": 999,
+      "address": "oluyoiut",
+      "paymentMethod": "cod",
+      "date": "2025-10-17T03:21:17.956Z"
     }
   ]
 }
