@@ -28,18 +28,17 @@
 
 
 
-// ✅ src/components/ProtectedAdminRoute.jsx
+
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // ✅ Use context instead of localStorage
+import { useAuth } from "../context/AuthContext"; 
 
 const ProtectedAdminRoute = ({ children }) => {
   const { user } = useAuth();
 
-  // ⏳ Wait for localStorage to load into context
   if (user === null) return null;
 
-  // ❌ If not admin, redirect to login
+ 
   if (!user || user.role !== "admin") {
     return <Navigate to="/login" replace />;
   }

@@ -22,9 +22,9 @@ const Products = () => {
   useEffect(() => {
     setIsLoading(true); 
     axios
-      .get("http://localhost:3000/products")
+      .get("http://127.0.0.1:8000/api/products/")
       .then((res) => {
-        setProducts(res.data);
+        setProducts(res.data.results || res.data);
         setIsLoading(false); 
       })
       .catch((err) => {
