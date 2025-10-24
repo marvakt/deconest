@@ -217,7 +217,8 @@
 //     </CartContext.Provider>
 //   );
 // };
-import React, { createContext, useContext, useState, useEffect, useMemo } from "react";
+
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
@@ -227,30 +228,26 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const user = useMemo(() => JSON.parse(localStorage.getItem("user")), []);
-  const token = useMemo(() => localStorage.getItem("access_token"), []);
+  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem("loggedInUser")));
+  const [token, setToken] = useState(() => localStorage.getItem("access_token"));
   const [cart, setCart] = useState([]);
 
-  const axiosConfig = {
-    headers: { Authorization: token ? `Bearer ${token}` : "" },
-  };
+  const axiosConfig = { headers: { Authorization: token ? `Bearer ${token}` : "" } };
 
-  // 🔹 Fetch cart from backend
+  // Fetch cart
   const fetchCart = async () => {
     if (!user || !token) return;
     try {
       const res = await axios.get(`${BASE_URL}cart/`, axiosConfig);
       setCart(res.data);
     } catch (err) {
-      console.error("Cart fetch failed:", err.response?.data || err);
+      console.error(err.response?.data || err);
     }
   };
 
-  useEffect(() => {
-    fetchCart();
-  }, [user, token]);
+  useEffect(() => { fetchCart(); }, [user, token]);
 
-  // 🔹 Add to cart (updates if already in cart)
+  // Add to cart (prevent duplicate)
   const addToCart = async (product, quantity = 1) => {
     if (!user || !token) {
       toast.error("Please login to add items to cart");
@@ -261,101 +258,56 @@ export const CartProvider = ({ children }) => {
       const existingItem = cart.find((item) => item.product?.id === product.id);
 
       if (existingItem) {
-        // Update quantity if already in cart
-        await axios.put(
-          `${BASE_URL}cart/${existingItem.id}/`,
-          { quantity: existingItem.quantity + quantity },
-          axiosConfig
-        );
-        toast.success("Cart updated!");
-      } else {
-        // Add new item
-        await axios.post(
-          `${BASE_URL}cart/`,
-          { product_id: product.id, quantity },
-          axiosConfig
-        );
-        toast.success("Added to cart!");
+        toast.error("Item already in cart. You can update quantity in your cart.");
+        return; // Stop adding
       }
 
-      fetchCart(); // Refresh cart
+      await axios.post(
+        `${BASE_URL}cart/`,
+        { product_id: product.id, quantity },
+        axiosConfig
+      );
+
+      toast.success("Added to cart!");
+      fetchCart();
     } catch (err) {
-      console.error("Error adding/updating cart:", err.response?.data || err);
-      toast.error(err.response?.data?.error || "Failed to add/update cart");
+      console.error(err.response?.data || err);
+      toast.error(err.response?.data?.error || "Failed to add item");
     }
   };
 
-  // 🔹 Remove from cart (instant UI)
+  // Remove item
   const removeFromCart = async (itemId) => {
-    if (!token) return;
-
-    const originalCart = [...cart];
-    setCart(cart.filter((c) => c.id !== itemId));
-
-    try {
-      await axios.delete(`${BASE_URL}cart/${itemId}/`, axiosConfig);
-      toast("Removed from cart", { icon: "❌" });
-    } catch (err) {
-      console.error("Error removing from cart:", err.response?.data || err);
-      toast.error("Failed to remove item");
-      setCart(originalCart); // revert if failed
-    }
+    const original = [...cart];
+    setCart(cart.filter(c => c.id !== itemId));
+    try { await axios.delete(`${BASE_URL}cart/${itemId}/`, axiosConfig); } 
+    catch (err) { setCart(original); toast.error("Failed to remove item"); }
   };
 
-  // 🔹 Update quantity (instant UI)
+  // Update quantity (only in cart page)
   const updateQty = async (itemId, delta) => {
-    if (!token) return;
-
-    const item = cart.find((c) => c.id === itemId);
+    const item = cart.find(c => c.id === itemId);
     if (!item) return;
-
     const newQty = item.quantity + delta;
     if (newQty < 1) return;
 
-    const originalCart = [...cart];
-    setCart(cart.map((c) => (c.id === itemId ? { ...c, quantity: newQty } : c)));
-
-    try {
-      await axios.put(`${BASE_URL}cart/${itemId}/`, { quantity: newQty }, axiosConfig);
-    } catch (err) {
-      console.error("Error updating quantity:", err.response?.data || err);
-      toast.error("Failed to update quantity");
-      setCart(originalCart); // revert if failed
-    }
+    const original = [...cart];
+    setCart(cart.map(c => (c.id === itemId ? { ...c, quantity: newQty } : c)));
+    try { await axios.put(`${BASE_URL}cart/${itemId}/`, { quantity: newQty }, axiosConfig); } 
+    catch (err) { setCart(original); toast.error("Failed to update quantity"); }
   };
 
-  // 🔹 Clear entire cart
+  // Clear cart
   const clearCart = async () => {
-    if (!token) return;
-    try {
-      await axios.delete(`${BASE_URL}cart/clear/`, axiosConfig);
-      setCart([]);
-      toast.success("Cart cleared!");
-    } catch (err) {
-      console.error("Error clearing cart:", err.response?.data || err);
-      toast.error("Failed to clear cart");
-    }
+    try { await axios.delete(`${BASE_URL}cart/clear/`, axiosConfig); setCart([]); toast.success("Cart cleared"); } 
+    catch (err) { toast.error("Failed to clear cart"); }
   };
 
-  // 🔹 Total price and count
-  const total = cart.reduce(
-    (acc, item) => acc + Number(item.product?.price || 0) * Number(item.quantity),
-    0
-  );
+  const total = cart.reduce((acc, item) => acc + Number(item.product?.price || 0) * Number(item.quantity), 0);
   const cartCount = cart.reduce((sum, item) => sum + Number(item.quantity), 0);
 
   return (
-    <CartContext.Provider
-      value={{
-        cart,
-        addToCart,
-        removeFromCart,
-        updateQty,
-        clearCart,
-        total,
-        cartCount,
-      }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQty, clearCart, total, cartCount }}>
       {children}
     </CartContext.Provider>
   );

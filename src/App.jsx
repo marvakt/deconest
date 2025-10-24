@@ -140,12 +140,12 @@ import Footer from './components/Footer';
 // Admin Pages
 import AdminLayout from './admin/AdminLayout';
 import AdminDashboard from './admin/AdminDashboard';
-import AddProduct from './admin/AddProduct';
-import ManageProducts from './admin/ManageProducts';
-import UpdateProduct from './admin/UpdateProduct';
-import ManageUsers from './admin/ManageUsers';
-import AdminOrders from './admin/AdminOrders';
-import ViewUser from './admin/ViewUser';
+import AddProduct from './admin/products/AddProduct';
+import ManageProducts from './admin/products/ManageProducts';
+import UpdateProduct from './admin/products/UpdateProduct';
+import ManageUsers from './admin/users/ManageUsers';
+import AdminOrders from './admin/orders/AdminOrders';
+import ViewUser from './admin/users/ViewUser';
 
 // Route Guards
 import ProtectedAdminRoute from './components/ProtectedAdminRoute';

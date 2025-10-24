@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import axiosInstance from "../utils/axiosInstance";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
