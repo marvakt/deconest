@@ -425,7 +425,7 @@ const MyOrders = () => {
             <p className="mt-4 text-gray-600 font-medium">Loading your orders...</p>
           </div>
         </div>
-        <Footer />
+      
       </>
     );
   }
@@ -513,7 +513,7 @@ const MyOrders = () => {
           )}
         </div>
       </div>
-      <Footer />
+     
       <style
         dangerouslySetInnerHTML={{
           __html: `
