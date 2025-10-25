@@ -1,246 +1,277 @@
 
 
-// import React, { useState } from "react";
+
+// import React, { useContext, useState } from "react";
 // import { useNavigate, Link } from "react-router-dom";
 // import axios from "axios";
 // import { toast } from "react-hot-toast";
-// import { useAuth } from "../context/AuthContext";
-// import axiosInstance from "../utils/axiosInstance";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+// import { authContext } from "../context/AuthContext";
+
+// const BASE_URL = "http://127.0.0.1:8000/api/";
 
 // const Login = () => {
-//   const navigate = useNavigate();
-//   const { login } = useAuth();
-
 //   const [formData, setFormData] = useState({
 //     username: "",
 //     password: "",
 //   });
-//   const [errors, setErrors] = useState({});
+//   const [isLoading, setIsLoading] = useState(false);
+//   const navigate = useNavigate();
+//   const { login } = useContext(authContext);
 
 //   const handleChange = (e) => {
-//     setFormData((prev) => ({
-//       ...prev,
-//       [e.target.name]: e.target.value,
-//     }));
-//     setErrors((prev) => ({
-//       ...prev,
-//       [e.target.name]: "",
-//     }));
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
 //   };
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
-
-//     const newErrors = {};
-//     if (!formData.username) newErrors.username = "Username is required";
-//     if (!formData.password) newErrors.password = "Password is required";
-//     if (Object.keys(newErrors).length > 0) {
-//       setErrors(newErrors);
+    
+//     if (!formData.username || !formData.password) {
+//       toast.error("Please fill in all fields");
 //       return;
 //     }
 
+//     setIsLoading(true);
+
 //     try {
-//       const res = await axiosInstance.post("users/login/", {
-//         username: formData.username,
-//         password: formData.password,
-//       });
+//       const response = await axios.post(`${BASE_URL}users/login/`, formData);
+      
+//       const { tokens, user } = response.data;
 
-//       const { tokens, user } = res.data;
-
-//       // Save tokens in localStorage
+//       // ✅ CRITICAL: Save ALL required data to localStorage with correct keys
 //       localStorage.setItem("access_token", tokens.access);
 //       localStorage.setItem("refresh_token", tokens.refresh);
-//       localStorage.setItem("user", JSON.stringify(user));
+//       localStorage.setItem("loggedInUser", JSON.stringify(user)); // For AuthContext & CartContext
+//       localStorage.setItem("user", JSON.stringify(user)); // For MyOrders (if you want backward compatibility)
 
-//       login(user);
+//       // After successful login
+//       login(user, tokens); // AuthContext saves user and tokens
 
-//       if (user.role === "admin") {
-//         toast.success("Welcome Admin!");
-//         navigate("/admin/dashboard", { replace: true });
+//       toast.success(`Welcome back, ${user.username}!`);
+//       navigate("/"); // No need for window.location.reload()
+
+  
+      
+//     } catch (error) {
+//       console.error("Login error:", error);
+      
+//       if (error.response?.status === 401) {
+//         toast.error("Invalid username or password");
+//       } else if (error.response?.data?.error) {
+//         toast.error(error.response.data.error);
 //       } else {
-//         toast.success("Login successful!");
-//         navigate("/", { replace: true });
+//         toast.error("Login failed. Please try again.");
 //       }
-//     } catch (err) {
-//       console.error("Login error:", err);
-//       if (err.response) {
-//         toast.error(err.response.data.error || "Invalid credentials");
-//       } else {
-//         toast.error("Something went wrong");
-//       }
+//     } finally {
+//       setIsLoading(false);
 //     }
 //   };
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-//       <form
-//         onSubmit={handleSubmit}
-//         className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
-//       >
-//         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+//     <>
+//       <Navbar />
+//       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50/30 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+//         <div className="max-w-md w-full space-y-8">
+//           {/* Header */}
+//           <div className="text-center">
+//             <h2 className="text-4xl font-light text-gray-900 mb-2">Welcome Back</h2>
+//             <p className="text-gray-600 font-light">Sign in to your account</p>
+//           </div>
 
-//         <div className="mb-4">
-//           <label className="block mb-1 font-medium">Username</label>
-//           <input
-//             type="text"
-//             name="username"
-//             value={formData.username}
-//             onChange={handleChange}
-//             className="w-full border px-3 py-2 rounded-md"
-//           />
-//           {errors.username && (
-//             <p className="text-red-500 text-sm">{errors.username}</p>
-//           )}
+//           {/* Form Card */}
+//           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-amber-100">
+//             <form onSubmit={handleSubmit} className="space-y-6">
+//               {/* Username */}
+//               <div>
+//                 <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
+//                   Username
+//                 </label>
+//                 <input
+//                   id="username"
+//                   name="username"
+//                   type="text"
+//                   required
+//                   value={formData.username}
+//                   onChange={handleChange}
+//                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-200"
+//                   placeholder="Enter your username"
+//                   disabled={isLoading}
+//                 />
+//               </div>
+
+//               {/* Password */}
+//               <div>
+//                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+//                   Password
+//                 </label>
+//                 <input
+//                   id="password"
+//                   name="password"
+//                   type="password"
+//                   required
+//                   value={formData.password}
+//                   onChange={handleChange}
+//                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-200"
+//                   placeholder="Enter your password"
+//                   disabled={isLoading}
+//                 />
+//               </div>
+
+//               {/* Submit Button */}
+//               <button
+//                 type="submit"
+//                 disabled={isLoading}
+//                 className="w-full py-3 px-4 bg-gradient-to-r from-amber-400 to-orange-400 text-white rounded-lg font-medium hover:from-amber-500 hover:to-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+//               >
+//                 {isLoading ? (
+//                   <span className="flex items-center justify-center">
+//                     <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+//                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+//                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+//                     </svg>
+//                     Signing in...
+//                   </span>
+//                 ) : (
+//                   "Sign In"
+//                 )}
+//               </button>
+//             </form>
+
+//             {/* Sign Up Link */}
+//             <div className="mt-6 text-center">
+//               <p className="text-sm text-gray-600">
+//                 Don't have an account?{" "}
+//                 <Link
+//                   to="/signup"
+//                   className="font-medium text-amber-600 hover:text-amber-500 transition-colors duration-200"
+//                 >
+//                   Sign up here
+//                 </Link>
+//               </p>
+//             </div>
+//           </div>
 //         </div>
-
-//         <div className="mb-6">
-//           <label className="block mb-1 font-medium">Password</label>
-//           <input
-//             type="password"
-//             name="password"
-//             value={formData.password}
-//             onChange={handleChange}
-//             className="w-full border px-3 py-2 rounded-md"
-//           />
-//           {errors.password && (
-//             <p className="text-red-500 text-sm">{errors.password}</p>
-//           )}
-//         </div>
-
-//         <button
-//           type="submit"
-//           className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
-//         >
-//           Login
-//         </button>
-
-//         <p className="mt-4 text-center text-sm text-gray-600">
-//           Don't have an account?{" "}
-//           <Link to="/signup" className="text-blue-600 hover:underline font-medium">
-//             Sign Up
-//           </Link>
-//         </p>
-//       </form>
-//     </div>
+//       </div>
+//       <Footer />
+//     </>
 //   );
 // };
 
 // export default Login;
 
+
+
+// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import { toast } from "react-hot-toast";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useAuth } from "../context/AuthContext";
-import axiosInstance from "../utils/axiosInstance";
+
+const BASE_URL = "http://127.0.0.1:8000/api/";
 
 const Login = () => {
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const [formData, setFormData] = useState({ username: "", password: "" });
-  const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = {};
-    if (!formData.username) newErrors.username = "Username is required";
-    if (!formData.password) newErrors.password = "Password is required";
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    if (!formData.username || !formData.password) {
+      toast.error("Please fill in all fields");
       return;
     }
 
+    setIsLoading(true);
+
     try {
-      const res = await axiosInstance.post("users/login/", {
-        username: formData.username,
-        password: formData.password,
-      });
+      const response = await axios.post(`${BASE_URL}users/login/`, formData);
+      const { tokens, user } = response.data;
 
-      const { tokens, user } = res.data;
+      // Save user & tokens in AuthContext and localStorage
+      login(user, tokens);
 
-      // ✅ Store tokens with correct keys
-      localStorage.setItem("access", tokens.access);
-      localStorage.setItem("refresh", tokens.refresh);
-      localStorage.setItem("user", JSON.stringify(user));
-
-      login(user);
-
-      if (user.role === "admin") {
-        toast.success("Welcome Admin!");
-        navigate("/admin/dashboard", { replace: true });
-      } else {
-        toast.success("Login successful!");
-        navigate("/", { replace: true });
-      }
-    } catch (err) {
-      console.error("Login error:", err);
-      if (err.response) {
-        toast.error(err.response.data.error || "Invalid credentials");
-      } else {
-        toast.error("Something went wrong");
-      }
+      toast.success(`Welcome back, ${user.username}!`);
+      navigate("/"); // Navigate to home or dashboard
+    } catch (error) {
+      console.error("Login error:", error);
+      const msg = error.response?.data?.error || "Login failed. Try again.";
+      toast.error(msg);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+    <>
+      <Navbar />
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-orange-50/30 py-12 px-4">
+        <div className="max-w-md w-full space-y-8">
+          <div className="text-center">
+            <h2 className="text-4xl font-light text-gray-900 mb-2">Welcome Back</h2>
+            <p className="text-gray-600 font-light">Sign in to your account</p>
+          </div>
 
-        <div className="mb-4">
-          <label className="block mb-1 font-medium">Username</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            className="w-full border px-3 py-2 rounded-md"
-          />
-          {errors.username && (
-            <p className="text-red-500 text-sm">{errors.username}</p>
-          )}
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-amber-100">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  required
+                  value={formData.username}
+                  onChange={handleChange}
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-200"
+                  placeholder="Enter your username"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  value={formData.password}
+                  onChange={handleChange}
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-200"
+                  placeholder="Enter your password"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full py-3 px-4 bg-gradient-to-r from-amber-400 to-orange-400 text-white rounded-lg font-medium hover:from-amber-500 hover:to-orange-500 transition-all duration-300"
+              >
+                {isLoading ? "Signing in..." : "Sign In"}
+              </button>
+            </form>
+
+            <p className="mt-6 text-center text-sm text-gray-600">
+              Don't have an account?{" "}
+              <Link to="/signup" className="font-medium text-amber-600 hover:text-amber-500">
+                Sign up here
+              </Link>
+            </p>
+          </div>
         </div>
-
-        <div className="mb-6">
-          <label className="block mb-1 font-medium">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full border px-3 py-2 rounded-md"
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password}</p>
-          )}
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
-        >
-          Login
-        </button>
-
-        <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-blue-600 hover:underline font-medium"
-          >
-            Sign Up
-          </Link>
-        </p>
-      </form>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
