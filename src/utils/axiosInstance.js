@@ -18,17 +18,15 @@
 // });
 
 // export default axiosInstance;
-
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-
 const axiosInstance = axios.create({
-  baseURL: `${API_BASE_URL}/api/`,
+  baseURL: import.meta.env.VITE_API_URL, // Uses env variable
 });
 
+// For public (non-authenticated) endpoints
 export const axiosPublic = axios.create({
-  baseURL: `${API_BASE_URL}/api/`,
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 axiosInstance.interceptors.request.use((config) => {
