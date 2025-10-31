@@ -1,11 +1,9 @@
-
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import axiosInstance from "../utils/axiosInstance";
+import { axiosPublic } from "../utils/axiosInstance"; // Changed to use axiosPublic
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -22,8 +20,8 @@ const Products = () => {
 
   useEffect(() => {
     setIsLoading(true); 
-    axios
-      .get("http://127.0.0.1:8000/api/products/")
+    axiosPublic // Changed to use axiosPublic
+      .get("products/") // Changed to relative path
       .then((res) => {
         setProducts(res.data.results || res.data);
         setIsLoading(false); 
@@ -262,5 +260,3 @@ const Products = () => {
 };
 
 export default Products;
-
-

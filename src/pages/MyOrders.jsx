@@ -447,7 +447,7 @@ const MyOrders = () => {
           )}
         </div>
       </div>
-      <Footer />
+    
       <style
         dangerouslySetInnerHTML={{
           __html: `
