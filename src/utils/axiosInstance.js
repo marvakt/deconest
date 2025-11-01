@@ -1,40 +1,64 @@
+
+
+
+
+// // src/utils/axiosInstance.js
 // import axios from "axios";
 
+// // ✅ Use your deployed backend URL (Django running on EC2)
+// const BASE_URL = import.meta.env.VITE_API_URL || "http://65.2.57.57/api/";
+
+// // 🔹 Create axios instance
 // const axiosInstance = axios.create({
-//   baseURL: "http://127.0.0.1:8000/api/",
+//   baseURL: BASE_URL,
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
 // });
 
-// // Create a separate instance without automatic authentication for public endpoints
-// export const axiosPublic = axios.create({
-//   baseURL: "http://127.0.0.1:8000/api/",
-// });
+// // 🔹 Automatically attach JWT token (if available)
+// axiosInstance.interceptors.request.use(
+//   (config) => {
+//     const token = localStorage.getItem("access_token");
+//     if (token) {
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
+//     return config;
+//   },
+//   (error) => Promise.reject(error)
+// );
 
-// axiosInstance.interceptors.request.use((config) => {
-//   const token = localStorage.getItem("access_token");
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
-//   return config;
-// });
-
+// // 🔹 Export both default & named version
 // export default axiosInstance;
+// export const axiosPublic = axiosInstance;
+
+
+
+// src/utils/axiosInstance.js
 import axios from "axios";
 
+// ✅ Always use HTTPS — your backend is SSL enabled now
+const BASE_URL = import.meta.env.VITE_API_URL || "https://65.2.57.57/api/";
+
+// 🔹 Create axios instance
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // Uses env variable
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
-// For public (non-authenticated) endpoints
-export const axiosPublic = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
-
-axiosInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem("access_token");
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+// 🔹 Automatically attach JWT token (if available)
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 export default axiosInstance;
+export const axiosPublic = axiosInstance;

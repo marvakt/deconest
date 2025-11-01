@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { axiosPublic } from "../../utils/axiosInstance"; // Changed to use axiosPublic
+import axiosInstance from "../../utils/axiosInstance";
+
 import { useWishlist } from "../../context/WishlistContext";
 import { useCart } from "../../context/CartContext";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
@@ -16,7 +17,8 @@ const TrendingNow = () => {
     const fetchTrending = async () => {
       setIsLoading(true);
       try {
-        const res = await axiosPublic.get("products/"); // Changed to use axiosPublic
+        const res = await axiosInstance.get("products/");
+
         const trending = res.data
           .filter((product) => !product.isArchived)
           .sort((a, b) => (b.soldCount || 0) - (a.soldCount || 0))

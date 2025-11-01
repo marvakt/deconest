@@ -233,7 +233,9 @@ import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { toast } from "react-hot-toast";
-import axiosInstance from "../utils/axiosInstance";
+import { axiosPublic } from "../utils/axiosInstance";
+
+
 
 const Checkout = () => {
   const { cart, clearCart } = useCart();
